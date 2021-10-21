@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:48207",
-      "sslPort": 44367
+      "applicationUrl": "http://localhost:25550",
+      "sslPort": 44389
     }
   },
   "profiles": {
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "GameOnline_51800785_51800408_51800429": {
+    "OnlineWebGame": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

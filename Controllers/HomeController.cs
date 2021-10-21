@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using GameOnline_51800785_51800408_51800429.Models;
+using OnlineWebGame.Models;
 
-namespace GameOnline_51800785_51800408_51800429.Controllers
+namespace OnlineWebGame.Controllers
 {
     public class HomeController : Controller
     {

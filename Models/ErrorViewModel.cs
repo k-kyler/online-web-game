@@ -1,6 +1,6 @@
 using System;
 
-namespace GameOnline_51800785_51800408_51800429.Models
+namespace OnlineWebGame.Models
 {
     public class ErrorViewModel
     {

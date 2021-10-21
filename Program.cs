@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace GameOnline_51800785_51800408_51800429
+namespace OnlineWebGame
 {
     public class Program
     {

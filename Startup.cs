@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace GameOnline_51800785_51800408_51800429
+namespace OnlineWebGame
 {
     public class Startup
     {

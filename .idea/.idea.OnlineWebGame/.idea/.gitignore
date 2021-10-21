@@ -4,10 +4,10 @@
 # Rider ignored files
 /modules.xml
 /contentModel.xml
+/.idea.OnlineWebGame.iml
 /projectSettingsUpdater.xml
-/.idea.GameOnline_51800785_51800408_51800429.iml
-# Editor-based HTTP Client requests
-/httpRequests/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

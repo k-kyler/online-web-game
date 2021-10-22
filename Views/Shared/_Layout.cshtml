@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css"/>
     <link rel="icon" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -14,22 +17,22 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
                 <img src="logo.png" width="40" height="40" />
-                <span class="ml-3 font-weight-bold">Journey</span>
+                <span class="ml-3">Journey</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" id="navbarNav">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Sign up</a>
+                        <a class="nav-link" asp-area="" asp-controller="SignUp" asp-action="Index">Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Sign in</a>
+                        <a class="nav-link" asp-area="" asp-controller="SignIn" asp-action="Index">Sign in</a>
                     </li>
                 </ul>
             </div>
@@ -43,8 +46,8 @@
 </div>
 
 <footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2021 - Journey - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div class="container text-center">
+        &copy; 2021 - Journey powered by KKL Team
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

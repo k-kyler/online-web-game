@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 
 namespace OnlineWebGame.Controllers
 {
-    public class PlayController : Controller
+    public class MenuController : Controller
     {
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult PlayGame()
+        {
+            return Redirect("/Game");
+        }
+
+        public IActionResult Exit()
+        {
+            // Code here - Clear session
             return View();
         }
     }

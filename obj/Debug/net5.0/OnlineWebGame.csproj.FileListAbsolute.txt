@@ -148,5 +148,5 @@ D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\OnlineWebGame.d
 D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\ref\OnlineWebGame.dll
 D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\OnlineWebGame.pdb
 D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\OnlineWebGame.genruntimeconfig.cache
-D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\Razor\Views\Play\index.cshtml.g.cs
-D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\Razor\Views\Play\Settings.cshtml.g.cs
+D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\Razor\Views\Game\index.cshtml.g.cs
+D:\Hoctap\HK7\CĐCNPM\LT\CUOIKY\online-web-game\obj\Debug\net5.0\Razor\Views\Menu\index.cshtml.g.cs

@@ -1,0 +1,67 @@
+@{
+    ViewBag.Title = "Menu";
+    Layout = "_Layout";
+}
+
+<div class="position-relative">
+    <div class="intro vh-100"></div>
+    <form class="signUpForm">
+        <h1 class="text-center">JOURNEY</h1>
+        <br />
+        <div class="d-flex justify-content-center">
+            <a href="/Menu/PlayGame" class="btn btn-warning float-right w-100 p-3">Play Game</a>
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal1">Settings</button>
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal2">Exit Game</button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal Settings -->
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">SETTINGS</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h3 class="text-center">Volume</h3>
+                    <div class="w-100 p-2 text-center" style="background-color: #F1F1F1;">100%</div>
+                </div>
+                <br />
+                <div>
+                    <h3 class="text-center">Bright</h3>
+                    <div class="w-100 p-2 text-center" style="background-color: #F1F1F1;">100%</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal2">Exit Game</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Exit -->
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">EXIT GAME</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">Are you sure you want to exit?</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+

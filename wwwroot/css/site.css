@@ -84,10 +84,11 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+
 /* Sign up and sign in styles */
 .intro {
-  background: url("../assets/intro_background.jpg") no-repeat center / cover;
-  border-radius: 12px;
+    background: url("../assets/intro_background.jpg") no-repeat center / cover;
+    border-radius: 12px;
 }
 
 .signUpForm {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yaBdeKsBn11vKOdwZ+UyRBWZvM4MpPmHKPKSWy+I6R+cbVbps6vTjQn2VNKAJlZHmX3IGDGz9AjQnFojjjFQ5Q==",
+  "dgSpecHash": "ZZ9h35D1nl16iKmMJVstBcvGAGv99aR2W2C63gC3GqdH/zuKbM/sHrnA2qWvTpLInr4kjBOiRxeakGCcy3l5YA==",
   "success": true,
-  "projectFilePath": "D:\\Hoctap\\HK7\\CĐCNPM\\LT\\online-web-game\\OnlineWebGame.csproj",
+  "projectFilePath": "D:\\Hoctap\\HK7\\CĐCNPM\\LT\\CUOIKY\\online-web-game\\OnlineWebGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSI GAMING\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MSI GAMING\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

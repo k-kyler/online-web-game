@@ -72,10 +72,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
   position: absolute;
   bottom: 0;
@@ -87,7 +83,7 @@ body {
 /* Sign up and sign in styles */
 .intro {
   background: url("../assets/intro_background.jpg") no-repeat center / cover;
-  border-radius: 12px;
+  height: 100vh;
 }
 
 .signUpForm {

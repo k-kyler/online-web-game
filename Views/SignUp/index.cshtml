@@ -1,25 +1,38 @@
 @{
-    ViewBag.Title = "Sign up";
+    ViewBag.Title = "Sign Up";
     Layout = "_Layout";
 }
 
 <div class="position-relative">
-    <div class="intro vh-100"></div>
+    <div class="intro"></div>
 
-    <form class="signUpForm">
-        <h1 class="text-white text-center">Sign up</h1>
+    <form class="signUpForm d-flex flex-column">
+        <h1 class="text-white text-center">Sign Up</h1>
         
         <div class="form-group">
-            <label class="text-white">Username</label>
-            <input type="text" class="form-control" placeholder="Enter username">
+            <label class="text-white" for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username">
         </div>
         
         <div class="form-group">
-            <label class="text-white">Password</label>
-            <input type="password" class="form-control" placeholder="Enter password">
+            <label class="text-white" for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
         </div>
         
-        <button type="submit" class="btn btn-danger">Finish!</button>
+        <div class="form-group">
+            <label class="text-white" for="confirmPassword">Confirm password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+        </div>
+        
+        <div class="d-flex justify-content-center mt-2">
+            <button type="submit" class="btn btn-danger">Sign Up</button>
+        </div>
     </form>
+    
+    <footer class="footer text-muted">
+        <div class="container text-center">
+            &copy; 2021 - Journey powered by KKL Team
+        </div>
+    </footer>
 </div>
 

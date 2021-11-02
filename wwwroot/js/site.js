@@ -27,4 +27,8 @@ $(document).ready(() => {
     $("#navbarNav .nav-item:nth-child(3)").click(event => {
         sessionStorage.setItem("nav-item-active", 3)
     });
+    
+    $("#navbarNav .nav-item:nth-child(4)").click(event => {
+        sessionStorage.setItem("nav-item-active", 4)
+    });
 })

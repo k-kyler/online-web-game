@@ -21,7 +21,7 @@ namespace OnlineWebGame.Controllers
         public IActionResult Exit()
         {
             // Code here - Clear session
-            return View();
+            throw new Exception();
         }
     }
 }

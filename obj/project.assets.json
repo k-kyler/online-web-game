@@ -817,26 +817,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MSI GAMING\\.nuget\\packages\\": {}
+    "/home/kkyler/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Hoctap\\HK7\\CĐCNPM\\LT\\CUOIKY\\online-web-game\\OnlineWebGame.csproj",
+      "projectUniqueName": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/OnlineWebGame.csproj",
       "projectName": "OnlineWebGame",
-      "projectPath": "D:\\Hoctap\\HK7\\CĐCNPM\\LT\\CUOIKY\\online-web-game\\OnlineWebGame.csproj",
-      "packagesPath": "C:\\Users\\MSI GAMING\\.nuget\\packages\\",
-      "outputPath": "D:\\Hoctap\\HK7\\CĐCNPM\\LT\\CUOIKY\\online-web-game\\obj\\",
+      "projectPath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/OnlineWebGame.csproj",
+      "packagesPath": "/home/kkyler/.nuget/packages/",
+      "outputPath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MSI GAMING\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/kkyler/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -888,7 +886,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
       }
     }
   }

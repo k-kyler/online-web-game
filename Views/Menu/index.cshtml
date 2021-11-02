@@ -5,7 +5,8 @@
 
 <div class="position-relative">
     <div class="intro vh-100"></div>
-    <form class="signUpForm">
+    
+    <form class="menuForm">
         <h1 class="text-center">JOURNEY</h1>
         <br />
         <div class="d-flex justify-content-center">
@@ -20,6 +21,12 @@
             <button type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal2">Exit Game</button>
         </div>
     </form>
+    
+    <footer class="footer text-muted">
+        <div class="container text-center">
+            &copy; 2021 - Journey powered by KKL Team
+        </div>
+    </footer>
 </div>
 
 <!-- Modal Settings -->
@@ -42,7 +49,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal2">Exit Game</button>
+                <button id="exitGameConfirm" type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal2">Exit Game</button>
             </div>
         </div>
     </div>
@@ -58,7 +65,7 @@
             </div>
             <div class="modal-body">Are you sure you want to exit?</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Yes, I'm sure</button>
                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
             </div>
         </div>

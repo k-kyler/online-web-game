@@ -1,5 +1,5 @@
 {
-  "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/OnlineWebGame.csproj",
+  "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/OnlineWebGame.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15619,38 +15619,53 @@
   "RootNamespace": "OnlineWebGame",
   "Documents": [
     {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/_ViewImports.cshtml",
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Menu/index.cshtml",
+      "TargetPath": "Views\\Menu\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Game/index.cshtml",
+      "TargetPath": "Views\\Game\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/Shared/Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/Home/Index.cshtml",
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/SignUp/index.cshtml",
+      "TargetPath": "Views\\SignUp\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/SignIn/index.cshtml",
+      "TargetPath": "Views\\SignIn\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],

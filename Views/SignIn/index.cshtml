@@ -1,12 +1,13 @@
 @{
-    ViewBag.Title = "Sign in";
+    ViewBag.Title = "Sign In";
     Layout = "_Layout";
 }
 
 <div class="position-relative">
     <div class="intro vh-100"></div>
-    <form class="signUpForm">
-        <h1>SIGN IN</h1>
+    
+    <form class="signUpForm d-flex flex-column">
+        <h1 class="text-center">SIGN IN</h1>
         <div class="form-group">
             <label class="text-white">Username</label>
             <input type="text" class="form-control" placeholder="Enter username">
@@ -16,7 +17,13 @@
             <input type="password" class="form-control" placeholder="Enter password">
         </div>
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-warning float-right">Signin</button>
+            <button type="submit" class="btn btn-warning">Sign In</button>
         </div>
     </form>
+    
+    <footer class="footer text-muted">
+        <div class="container text-center">
+            &copy; 2021 - Journey powered by KKL Team
+        </div>
+    </footer>
 </div>

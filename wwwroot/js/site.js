@@ -12,23 +12,29 @@ $(document).ready(() => {
         $(`#navbarNav .nav-item:nth-child(1)`).addClass("active");
     }
     
-    $(".navbar-brand").click(event => {
+    $(".navbar-brand").click(() => {
         sessionStorage.setItem("nav-item-active", 1)
     });
     
-    $("#navbarNav .nav-item:nth-child(1)").click(event => {
+    $("#navbarNav .nav-item:nth-child(1)").click(() => {
         sessionStorage.setItem("nav-item-active", 1)
     });
     
-    $("#navbarNav .nav-item:nth-child(2)").click(event => {
+    $("#navbarNav .nav-item:nth-child(2)").click(() => {
         sessionStorage.setItem("nav-item-active", 2)
     });
     
-    $("#navbarNav .nav-item:nth-child(3)").click(event => {
+    $("#navbarNav .nav-item:nth-child(3)").click(() => {
         sessionStorage.setItem("nav-item-active", 3)
     });
 
-    $("#navbarNav .nav-item:nth-child(4)").click(event => {
+    $("#navbarNav .nav-item:nth-child(4)").click(() => {
         sessionStorage.setItem("nav-item-active", 4)
     });
+    
+    // Force setting modal to hide when open exit game modal
+    $("#exitGameConfirm").click(() => {
+        $("#myModal1").modal("hide")
+        $(".modal-backdrop").css("display", "none")
+    })
 })

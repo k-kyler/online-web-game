@@ -88,7 +88,8 @@ html {
 }
 
 .signUpForm,
-.menuForm {
+.menuForm,
+.loading{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,4 +105,27 @@ html {
   background: linear-gradient(to right, #B4D5FE 0%, #FEF400 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/*Loading*/
+.loading {
+    color: #5b3cd5;
+}
+svg {
+    width: 12em;
+    animation: 1.5s spin ease infinite;
+}
+.ring {
+    fill: none;
+    stroke: #5b3cd5;
+    stroke-width: 2;
+}
+.ball {
+    fill: #5b3cd5;
+    stroke: none;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/kkyler/.dotnet/store/|arch|/|tfm|",
-      "/home/kkyler/.nuget/packages"
+      "C:\\Users\\MSI GAMING\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\MSI GAMING\\.nuget\\packages"
     ]
   }
 }

@@ -34,6 +34,12 @@ namespace OnlineWebGame.Controllers
             return View();
         }
 
+        public IActionResult Loading()
+        {
+            // This is Loading Page
+            return View();
+        }
+
         //--------------------
         // NOTE:
         // At each Room include:

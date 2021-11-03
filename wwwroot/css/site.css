@@ -118,6 +118,9 @@ html {
 }
 
 /* Hall styles */
+.hall > img {
+  height: 35rem;
+}
 
 /* Loading */
 .loading {

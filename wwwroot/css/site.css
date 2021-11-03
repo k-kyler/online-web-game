@@ -124,23 +124,24 @@ html {
 
 /* Loading */
 .loading {
-  color: #5b3cd5;
+    color: #885CD5;
+    text-shadow: 3.5px 3.5px black;
 }
 
 svg {
-  width: 12em;
+  width: 16em;
   animation: 1.5s spin ease infinite;
 }
 
 .ring {
-  fill: none;
-  stroke: #5b3cd5;
-  stroke-width: 2;
+    fill: none;
+    stroke: #635ED5;
+    stroke-width: 3;
 }
 
 .ball {
-  fill: #5b3cd5;
-  stroke: none;
+    fill: #68D5CB;
+    stroke: none;
 }
 
 @keyframes spin {

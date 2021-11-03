@@ -15619,6 +15619,16 @@
   "RootNamespace": "OnlineWebGame",
   "Documents": [
     {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Game/RedRoom.cshtml",
+      "TargetPath": "Views\\Game\\RedRoom.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Game/PurpleRoom.cshtml",
+      "TargetPath": "Views\\Game\\PurpleRoom.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15644,6 +15654,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Game/BlueRoom.cshtml",
+      "TargetPath": "Views\\Game\\BlueRoom.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/SignUp/index.cshtml",
       "TargetPath": "Views\\SignUp\\index.cshtml",
       "FileKind": "mvc"
@@ -15656,6 +15671,11 @@
     {
       "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/Views/Game/GreenRoom.cshtml",
+      "TargetPath": "Views\\Game\\GreenRoom.cshtml",
       "FileKind": "mvc"
     },
     {

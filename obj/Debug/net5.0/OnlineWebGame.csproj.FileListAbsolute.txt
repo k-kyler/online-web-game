@@ -202,3 +202,7 @@ D:/Hoctap/HK7/CĐCNPM/LT/CUOIKY/online-web-game/obj/Debug/net5.0/Razor/Views/Men
 /home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/ref/OnlineWebGame.dll
 /home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/OnlineWebGame.pdb
 /home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/OnlineWebGame.genruntimeconfig.cache
+/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/Razor/Views/Game/BlueRoom.cshtml.g.cs
+/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/Razor/Views/Game/GreenRoom.cshtml.g.cs
+/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/Razor/Views/Game/PurpleRoom.cshtml.g.cs
+/home/kkyler/Documents/Workspace/School Projects/Advanced Software Engineering/OnlineWebGame/online-web-game/obj/Debug/net5.0/Razor/Views/Game/RedRoom.cshtml.g.cs

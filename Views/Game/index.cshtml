@@ -9,8 +9,8 @@
     <div class="playerinfo">
         <span class="playerinfo-username text-white">Khai Bui</span>
         
-        <div class="playerinfo-avatar position-relative">
-            <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/66368949?v=4"/>
+        <div class="playerinfo-avatar position-relative" id="playerInfoModalTrigger">
+            <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/66368949?v=4" />
             <div class="playerinfo-level rounded-circle">
                 <span>26</span>
             </div>
@@ -36,4 +36,91 @@
     </div>
 
     <canvas id="hall_map"></canvas>
+</div>
+
+<div class="modal fade" id="playerInfoModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header align-items-center justify-content-center" style="border-bottom: none;">
+                <h5 class="modal-title">Player Information</h5>
+                <button type="button" class="close position-absolute" style="right: 1rem; outline: none;" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body pb-4">
+                <div class="container">
+                    <div class="row d-flex" style="justify-content: space-around;">
+                        <div class="col-md-5 p-4 position-relative" style="border: 1px solid darkgray; border-radius: 6px;">
+                            <span class="playerinfo-title px-2 mx-2">Tasks</span>
+
+                            <div class="playerinfo-roomtask mb-4 d-flex flex-column position-relative">
+                                <span class="px-2 mx-2">Green Room</span>
+                                
+                                <div class="playerinfo-taskdetail d-flex align-items-center justify-content-between px-3 pb-3 mt-3">
+                                    <h4 class="mb-0">2/2</h4>
+                                    <span class="playerinfo-taskchecker">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="playerinfo-roomtask mb-4 d-flex flex-column position-relative">
+                                <span class="px-2 mx-2">Red Room</span>
+                                
+                                <div class="playerinfo-taskdetail d-flex align-items-center justify-content-between px-3 pb-3 mt-3">
+                                    <h4 class="mb-0">0/2</h4>
+                                </div>
+                            </div>
+                            <div class="playerinfo-roomtask mb-4 d-flex flex-column position-relative">
+                                <span class="px-2 mx-2">Blue Room</span>
+                                
+                                <div class="playerinfo-taskdetail d-flex align-items-center justify-content-between px-3 pb-3 mt-3">
+                                    <h4 class="mb-0">1/2</h4>
+                                </div>
+                            </div>
+
+                            <div class="playerinfo-roomtask d-flex flex-column position-relative">
+                                <span class="px-2 mx-2">Purple Room</span>
+                                
+                                <div class="playerinfo-taskdetail d-flex align-items-center justify-content-between px-3 pb-3 mt-3">
+                                    <h4 class="mb-0">2/2</h4>
+                                    <span class="playerinfo-taskchecker">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 p-4 position-relative" style="border: 1px solid darkgray; border-radius: 6px;">
+                            <span class="playerinfo-title px-2 mx-2">Play together</span>
+                            
+                            <div class="playerinfo-searchbar d-flex align-items-center mb-3">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search for player...">
+                            </div>
+
+                            <ul class="playerinfo-users pl-0">
+                                <li class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="playerinfo-avatar position-relative">
+                                            <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/66368990?v=4" />
+                                            <div class="playerinfo-level rounded-circle">
+                                                <span>88</span>
+                                            </div>
+                                        </div>
+
+                                        <p class="mb-0 ml-2">Nguyen Van A</p>
+                                    </div>
+
+                                    <span style="font-size: 1.25rem; color: greenyellow;">
+                                        <i class="fas fa-toggle-on"></i>
+                                    </span>
+                                </li>
+                            </ul>
+
+                            @* pagination *@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,30 @@
+.loading {
+  color: #885cd5;
+  text-shadow: 3.5px 3.5px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  width: 16em;
+  animation: 1.5s spin ease infinite;
+}
+
+.ring {
+  fill: none;
+  stroke: #635ed5;
+  stroke-width: 3;
+}
+
+.ball {
+  fill: #68d5cb;
+  stroke: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,54 +1,107 @@
+/* Player info progress view */
 .playerinfo {
-    position: absolute;
-    top: 1.25rem;
-    left: 1rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    padding: 1.25rem 1rem 1rem 1rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 1.25rem;
+  left: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding: 1.25rem 1rem 1rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.playerinfo-avatar {
+  cursor: pointer;
 }
 
 .playerinfo-avatar > img {
-    height: 3.5rem;
-    padding: 0.25rem;
-    border: 1px solid lightgrey;
+  height: 3.5rem;
+  padding: 0.25rem;
+  border: 2px solid lightgrey;
 }
 
 .playerinfo-progress .progress {
-    width: 12rem;
+  width: 12rem;
 }
 
 .playerinfo-progress .progress .bg-danger {
-    background-color: #5F2CCC !important;
+  background-color: #5f2ccc !important;
 }
 
 .playerinfo-level {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: grid;
-    place-items: center;
-    background-color: #FFFF00;
-    padding: 0.2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  background-color: #ffff00;
+  padding: 0.2rem;
 }
 
 .playerinfo-level > span {
-    height: 1rem;
-    width: 1rem;
-    display: grid;
-    place-items: center;
-    font-size: 0.75rem;
-    font-weight: 500;
+  height: 1rem;
+  width: 1rem;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .playerinfo-progress span {
-    font-size: 0.75rem;
-    font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .playerinfo-username {
-    position: absolute;
-    bottom: 85%;
+  position: absolute;
+  bottom: 85%;
+  font-weight: 600;
+}
+
+/* Player info modal */
+.playerinfo-roomtask {
+  border: 1px solid darkgray;
+  border-radius: 6px;
+}
+
+.playerinfo-title,
+.playerinfo-roomtask > span {
+  font-weight: 500;
+  position: absolute;
+  background: white;
+  color: darkgray;
+}
+
+.playerinfo-title {
+  bottom: 97%;
+}
+
+.playerinfo-roomtask > span {
+  bottom: 80%;
+}
+
+.playerinfo-taskdetail > span {
+  color: greenyellow;
+  font-size: 1.25rem;
+}
+
+.playerinfo-searchbar {
+  border-radius: 24px;
+  background-color: #f1f2f5;
+  padding: 0.5rem 1rem;
+}
+
+.playerinfo-searchbar > input {
+  outline: none;
+  border: none;
+  margin-left: 0.5rem;
+  background-color: #f1f2f5;
+  width: 100%;
+}
+
+.playerinfo-users {
+  list-style: none;
 }

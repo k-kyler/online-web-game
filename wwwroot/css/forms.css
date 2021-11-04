@@ -1,0 +1,19 @@
+/* Sign up, sign in and menu */
+.signUpForm,
+.menuForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menuForm > h1 {
+  letter-spacing: 0.5ch;
+}
+
+.signUpForm > h1,
+.menuForm > h1 {
+  background: linear-gradient(to right, #b4d5fe 0%, #fef400 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,10 @@
+.hall > img {
+  height: 35rem;
+}
+
+#hall_map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -5,12 +5,12 @@
 
 <div class="position-relative h-100">
     <div class="intro"></div>
-    
+
     <form class="menuForm">
         <h1 class="text-center">JOURNEY</h1>
         <br />
         <div class="d-flex justify-content-center">
-            <a href="/Menu/PlayGame" class="btn btn-warning float-right w-100 p-3">Play Game</a>
+            <button type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal0">Play Game</button>
         </div>
         <br />
         <div class="d-flex justify-content-center">
@@ -32,7 +32,49 @@
     .modal-dialog-custom {
         margin: 6rem auto !important;
     }
+    .characters-img {
+        width: 100%;
+        height: 400px;
+        cursor: pointer;
+    }
+    .characters:hover {
+        background-color: #343340;
+        border-radius: 10px;
+        color: #F9F9F9;
+    }
+    .bg-f1 {
+        background-color: #F1F1F1;
+    }
 </style>
+
+<!-- Modal Choose Characters -->
+<div class="modal fade" id="myModal0" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-custom">
+        <div class="modal-content">
+            <div class="modal-header align-items-center justify-content-center">
+                <h5 class="modal-title">Choose Characters</h5>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="col-md-6 characters">
+                            <a href="/Menu/PlayGame">
+                                <img src="~/assets/character1.png" alt="Gentleman" class="p-3 characters-img">
+                            </a>
+                            <h5 class="text-center">Gentleman</h5>
+                        </div>
+                        <div class="col-md-6 characters">
+                            <a href="/Menu/PlayGame">
+                                <img src="~/assets/character2.png" alt="LadyGirl" class="p-3 characters-img">
+                            </a>
+                            <h5 class="text-center">LadyGirl</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal Settings -->
 <div class="modal fade" id="myModal1" role="dialog">
@@ -45,12 +87,12 @@
             <div class="modal-body">
                 <div>
                     <h3 class="text-center">Volume</h3>
-                    <div class="w-100 p-2 text-center" style="background-color: #F1F1F1;">100%</div>
+                    <div class="w-100 p-2 text-center bg-f1">100%</div>
                 </div>
                 <br />
                 <div>
                     <h3 class="text-center">Bright</h3>
-                    <div class="w-100 p-2 text-center" style="background-color: #F1F1F1;">100%</div>
+                    <div class="w-100 p-2 text-center bg-f1">100%</div>
                 </div>
             </div>
             <div class="modal-footer">

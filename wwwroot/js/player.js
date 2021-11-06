@@ -1,13 +1,13 @@
 ﻿const canvas = document.getElementById("hall_map");
 const ctx = canvas.getContext("2d");
-canvas.height = 480;
-canvas.width = 480;
+canvas.height = 478;
+canvas.width = 928;
 
 const keys = [];
 
 const player = {
-  x: 240,
-  y: 240,
+  x: 464,
+  y: 239,
   width: 32,
   height: 48,
   frameX: 0,

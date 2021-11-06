@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   user-select: none;
+  z-index: 99;
 }
 
 .playerinfo-avatar {

@@ -3,4 +3,40 @@
     Layout = "_Layout";
 }
 
-<h2>Red Room</h2>
+<div class="position-relative hall h-100">
+    <div class="redRoom"></div>
+
+    <div class="playerinfo">
+        @* Username *@
+        <span class="playerinfo-username text-white">Khai Bui</span>
+
+        @* Avatar *@
+        <div class="playerinfo-avatar position-relative" id="playerInfoModalTrigger">
+            <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/66368949?v=4" />
+            <div class="playerinfo-level rounded-circle">
+                <span>26</span>
+            </div>
+        </div>
+
+        @* Game progress *@
+        <div class="playerinfo-progress text-white ml-3 d-flex flex-column">
+            <div class="d-flex align-items-center mb-2">
+                <span class="mr-2" style="width: 1.75rem">Task</span>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="ml-2">(1/5)</span>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <span class="mr-2" style="width: 1.75rem">Exp</span>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="ml-2">(67%)</span>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="red_room"></canvas>
+</div>

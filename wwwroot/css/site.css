@@ -24,16 +24,23 @@ a.navbar-brand {
 }
 
 .active > a {
-  color: #5b3cd5 !important;
+    color: #C9B3D5 !important;
+    font-weight: 500;
+    text-shadow: 2px 2px black;
 }
 
 .navbar-brand > span {
   font-weight: 500;
 }
 
+.home_page > h1, .home_page > h4 {
+    color: aquamarine;
+    text-shadow: 4px 4px black;
+}
+
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 .bg-f1 {
@@ -48,7 +55,7 @@ a {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #F9F9F9;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }

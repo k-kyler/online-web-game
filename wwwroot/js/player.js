@@ -1,11 +1,11 @@
-﻿var index = 0;
+﻿var index = 1;
 
 // Change 'index' from [0-4]
 // Then:
 //      /Game
 //      /Game/BlueRoom
 //      /Game/GreenRoom
-//      /Game/RedRoom
+//      /Game/RedRooms
 //      /Game/PurpleRoom
 // To choose the exact map that appears in each room.
 

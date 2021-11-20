@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,17 +12,21 @@ namespace OnlineWebGame.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.Session.GetString("username") != null)
+                return View();
+            return Redirect("/signin");
         }
 
-        public IActionResult PlayGame()
+        public IActionResult PlayGame([FromQuery(Name = "gd")]string gd)
         {
-            return Redirect("/Game");
+            return Redirect("/Game?gd=" + gd);
         }
 
         public IActionResult Exit()
         {
             // Code here - Clear session
+            HttpContext.Session.Clear();
+
             throw new Exception();
         }
     }

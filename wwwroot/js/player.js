@@ -1,5 +1,22 @@
 ﻿var index = 0;
 
+
+if (window.location.pathname == "/Game") {
+    index = 0;
+}
+if (window.location.pathname == "/Game/BlueRoom") {
+    index = 1;
+}
+if (window.location.pathname == "/Game/GreenRoom") {
+    index = 2;
+}
+if (window.location.pathname == "/Game/RedRoom") {
+    index = 3;
+}
+if (window.location.pathname == "/Game/PurpleRoom") {
+    index = 4;
+}
+
 // Change 'index' from [0-4]
 // Then:
 //      /Game
@@ -28,8 +45,17 @@ var player = {
   moving: false,
 };
 
+
+var params = new URLSearchParams(window.location.search)
+if (params.get("gd") == "male") {
+    playerSpiteURL = "../assets/indianajones.png"
+}
+else {
+    playerSpiteURL = "../assets/marionravenwood.png"
+}
+
 var playerSprite = new Image();
-playerSprite.src = "../assets/indianajones.png";
+playerSprite.src = playerSpiteURL;
 var map = new Image();
 map.src = "../assets/" + mapName[index] + ".png";
 

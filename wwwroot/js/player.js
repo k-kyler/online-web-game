@@ -1,6 +1,5 @@
 ﻿var index = -1;
 
-
 if (window.location.pathname == "/Game") {
     index = 0;
 }
@@ -22,7 +21,7 @@ if (window.location.pathname == "/Game/PurpleRoom") {
 //      /Game
 //      /Game/BlueRoom
 //      /Game/GreenRoom
-//      /Game/RedRoom
+//      /Game/RedRooms
 //      /Game/PurpleRoom
 // To choose the exact map that appears in each room.
 

@@ -1,4 +1,4 @@
-#hall_map, #blue_room, #green_room, #red_room, #purple_room {
+.home_page, #hall_map, #blue_room, #green_room, #red_room, #purple_room {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -6,6 +6,10 @@
     border-radius: 12px;
 }
 
+.homePage {
+    background: url("../assets/home_background.jpg") no-repeat center / cover;
+    height: 100%;
+}
 .blueRoom {
     background: url("../assets/blue_background.jpg") no-repeat center / cover;
     height: 100%;

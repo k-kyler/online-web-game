@@ -14,6 +14,7 @@ body {
 /* Main */
 main {
   flex: 1;
+  position: relative;
 }
 
 /* Navbar */
@@ -95,4 +96,88 @@ html {
 .intro {
   background: url("../assets/intro_background.jpg") no-repeat center / cover;
   height: 100%;
+}
+
+/* chat */
+.chat {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  opacity: 0.5;
+  background-color: #424242;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20rem;
+  height: 10rem;
+}
+
+.chat-box {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem;
+  list-style: none;
+  
+  /* Config for hiding scrollbar */
+  mask-image: linear-gradient(to top, transparent, black),
+  linear-gradient(to left, transparent 0.5rem, black 0.5rem);
+  mask-size: 100% 1000rem;
+  mask-position: left bottom;
+
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+  linear-gradient(to left, transparent 0.5rem, black 0.5rem);
+  -webkit-mask-size: 100% 1000rem;
+  -webkit-mask-position: left bottom;
+
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+  /* End of config for hiding scrollbar */
+}
+
+.chat-box:hover {
+  -webkit-mask-position: left top;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #676767;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background-color: #424242;
+}
+
+.chat-message {
+  display: flex;
+  margin: 0.3rem 0;
+}
+
+.chat-message-username {
+  color: mediumseagreen;
+  margin-right: 0.1rem;
+}
+
+.chat-message-username::after {
+  content: ":";
+}
+
+.chat-message-content {
+  color: white;
+}
+
+.chat-message-time {
+  color: lightgray;
+  margin-right: 0.1rem;
+}
+
+.chat-input {
+  border: none;
+  outline: none;
+  background-color: #161b22;
+  padding: 0.5rem;
+  font-size: inherit;
 }

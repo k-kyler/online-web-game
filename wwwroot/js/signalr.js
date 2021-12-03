@@ -22,5 +22,12 @@ start();
 
 // Event listeners
 signalRConnection.on("ReceiveMessage", message => {
-    // create UI of message...
+    $("#chatBox").append(`
+        <li class="chat-message">
+            <span class="chat-message-time">[${new Date(message.createdAt).toLocaleTimeString()}]</span>
+            <span class="chat-message-username">${message.userName}</span>
+            <span class="chat-message-content">${message.content}</span>
+        </li>
+    `)
+    $("#chatBox").scrollTop = $("#chatBox").scrollHeight;
 })

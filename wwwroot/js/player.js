@@ -1,11 +1,23 @@
-﻿const canvas = document.getElementById("hall_map");
-const ctx = canvas.getContext("2d");
+﻿var index = 1;
+
+// Change 'index' from [0-4]
+// Then:
+//      /Game
+//      /Game/BlueRoom
+//      /Game/GreenRoom
+//      /Game/RedRooms
+//      /Game/PurpleRoom
+// To choose the exact map that appears in each room.
+
+
+var mapName = ["hall_map", "blue_room", "green_room", "red_room", "purple_room"];
+var canvas = document.getElementById(mapName[index]);
+var ctx = canvas.getContext("2d");
 canvas.height = 478;
 canvas.width = 928;
 
-const keys = [];
-
-const player = {
+var keys = [];
+var player = {
   x: 464,
   y: 239,
   width: 32,
@@ -16,10 +28,10 @@ const player = {
   moving: false,
 };
 
-const playerSprite = new Image();
+var playerSprite = new Image();
 playerSprite.src = "../assets/indianajones.png";
-const hallMap = new Image();
-hallMap.src = "../assets/hall_map.png";
+var map = new Image();
+map.src = "../assets/" + mapName[index] + ".png";
 
 function drawSprite(img, sX, xY, xW, sH, dX, dY, dW, dH) {
   ctx.drawImage(img, sX, xY, xW, sH, dX, dY, dW, dH);
@@ -87,7 +99,7 @@ function animate() {
   if (elapsed > fpsInterval) {
     then = now - (elapsed % fpsInterval);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(hallMap, 0, 0);
+    ctx.drawImage(map, 0, 0);
     drawSprite(
       playerSprite,
       player.width * player.frameX,

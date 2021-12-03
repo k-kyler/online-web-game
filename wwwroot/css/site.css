@@ -25,16 +25,27 @@ a.navbar-brand {
 }
 
 .active > a {
-  color: #5b3cd5 !important;
+    color: #C9B3D5 !important;
+    font-weight: 500;
+    text-shadow: 2px 2px black;
 }
 
 .navbar-brand > span {
   font-weight: 500;
 }
 
+.home_page > h1, .home_page > h4 {
+    color: aquamarine;
+    text-shadow: 4px 4px black;
+}
+
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
+}
+
+.bg-f1 {
+    background-color: #F1F1F1;
 }
 
 .btn-primary {
@@ -45,7 +56,7 @@ a {
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #F9F9F9;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -98,6 +109,7 @@ html {
   height: 100%;
 }
 
+<<<<<<< HEAD
 /* chat */
 .chat {
   position: absolute;
@@ -181,3 +193,22 @@ html {
   padding: 0.5rem;
   font-size: inherit;
 }
+=======
+/* Modal */
+.modal-dialog-custom {
+    margin: 6rem auto !important;
+}
+
+/* Character */
+.characters-img {
+    width: 100%;
+    height: 400px;
+    cursor: pointer;
+}
+.characters:hover {
+    background-color: #343340;
+    border-radius: 10px;
+    color: #F9F9F9;
+}
+
+>>>>>>> 2fc4b37160574d44953a967d5a6818b54c73c0f8

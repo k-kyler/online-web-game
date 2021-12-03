@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineWebGame.Data;
+using OnlineWebGame.Hubs;
 
 namespace OnlineWebGame
 {
@@ -27,6 +28,8 @@ namespace OnlineWebGame
         {
             services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddSignalR();
+                
             services.AddControllersWithViews();
 
             services.AddSession();
@@ -60,6 +63,8 @@ namespace OnlineWebGame
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapHub<ChatHub>("/hubs/chat");
             });
         }
     }

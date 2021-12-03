@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OnlineWebGame.Data;
@@ -9,9 +10,10 @@ using OnlineWebGame.Data;
 namespace OnlineWebGame.Migrations
 {
     [DbContext(typeof(GameOnlineContext))]
-    partial class GameOnlineContextModelSnapshot : ModelSnapshot
+    [Migration("20211203072524_AddMessage")]
+    partial class AddMessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

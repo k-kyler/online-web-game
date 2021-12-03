@@ -3,7 +3,6 @@ using OnlineWebGame.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace OnlineWebGame.DAO
 {
@@ -32,17 +31,26 @@ namespace OnlineWebGame.DAO
 
         public void createUser(User user)
         {
-            _db.Add(user);
+            var existingUser = _db.Users.FirstOrDefault(u => u.UserId == user.UserId);
+
+            if (existingUser is not null)
+            {
+                throw new Exception("User has already existed");
+            }
+            
+            _db.Users.Add(user);
             _db.SaveChanges();
         }
 
         public void updateUser(User user)
         {
-            var isExistUser = _db.Users.FirstOrDefault(u => u.UserId == user.UserId);
-            if(isExistUser is null)
+            var existingUser = _db.Users.FirstOrDefault(u => u.UserId == user.UserId);
+            
+            if(existingUser is null)
             {
                 throw new NullReferenceException();
             }
+            
             _db.Users.Update(user);
             _db.SaveChanges();
         }

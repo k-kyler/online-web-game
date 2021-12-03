@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineWebGame.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace OnlineWebGame.Data
 {
@@ -17,7 +12,6 @@ namespace OnlineWebGame.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
-
-        
+        public DbSet<Message> Messages { get; set; }
     }
 }

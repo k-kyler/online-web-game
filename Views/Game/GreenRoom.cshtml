@@ -3,10 +3,10 @@
     Layout = "_Layout";
 }
 
-<partial name="_ChatPartial" />
-
 <h2>Green Room</h2>
 <div class="position-relative hall h-100">
+    <partial name="_ChatPartial"/>
+
     <div class="greenRoom"></div>
 
     <div class="playerinfo">
@@ -15,7 +15,7 @@
 
         @* Avatar *@
         <div class="playerinfo-avatar position-relative" id="playerInfoModalTrigger">
-            <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/66368949?v=4" />
+            <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/66368949?v=4"/>
             <div class="playerinfo-level rounded-circle">
                 <span>@ViewBag.level</span>
             </div>

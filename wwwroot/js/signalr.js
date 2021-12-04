@@ -25,9 +25,10 @@ signalRConnection.on("ReceiveMessage", message => {
     $("#chatBox").append(`
         <li class="chat-message">
             <span class="chat-message-time">[${new Date(message.createdAt).toLocaleTimeString()}]</span>
-            <span class="chat-message-username">${message.userName}</span>
+            <span class="chat-message-username">${message.username}</span>
             <span class="chat-message-content">${message.content}</span>
         </li>
     `)
-    $("#chatBox").scrollTop = $("#chatBox").scrollHeight;
+    $("#chatInput").val("");
+    document.getElementById("chatBox").scrollTop = document.getElementById("chatBox").scrollHeight
 })

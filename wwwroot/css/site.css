@@ -14,7 +14,6 @@ body {
 /* Main */
 main {
   flex: 1;
-  position: relative;
 }
 
 /* Navbar */
@@ -109,19 +108,19 @@ html {
   height: 100%;
 }
 
-<<<<<<< HEAD
 /* chat */
 .chat {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  opacity: 0.5;
-  background-color: #424242;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 20rem;
-  height: 10rem;
+  width: 28rem;
+  height: 13rem;
+  border-radius: 8px;
 }
 
 .chat-box {
@@ -131,6 +130,7 @@ html {
   scroll-behavior: smooth;
   padding: 0.5rem;
   list-style: none;
+  margin-bottom: 0;
   
   /* Config for hiding scrollbar */
   mask-image: linear-gradient(to top, transparent, black),
@@ -165,12 +165,13 @@ html {
 
 .chat-message {
   display: flex;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
+  word-break: break-word;
 }
 
 .chat-message-username {
   color: mediumseagreen;
-  margin-right: 0.1rem;
+  margin-right: 0.2rem;
 }
 
 .chat-message-username::after {
@@ -183,7 +184,7 @@ html {
 
 .chat-message-time {
   color: lightgray;
-  margin-right: 0.1rem;
+  margin-right: 0.2rem;
 }
 
 .chat-input {
@@ -191,9 +192,12 @@ html {
   outline: none;
   background-color: #161b22;
   padding: 0.5rem;
-  font-size: inherit;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: white;
+  opacity: 0.6;
 }
-=======
+
 /* Modal */
 .modal-dialog-custom {
     margin: 6rem auto !important;
@@ -210,5 +214,3 @@ html {
     border-radius: 10px;
     color: #F9F9F9;
 }
-
->>>>>>> 2fc4b37160574d44953a967d5a6818b54c73c0f8

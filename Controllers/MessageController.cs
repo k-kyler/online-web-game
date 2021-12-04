@@ -40,7 +40,7 @@ namespace OnlineWebGame.Controllers
 
         [Route("message/create")]
         [HttpPost]
-        public async Task<IActionResult> CreateMessage(MessageViewModel message)
+        public async Task<IActionResult> CreateMessage([FromBody] MessageViewModel message)
         {
             if (HttpContext.Session.GetString("username") != null)
             {

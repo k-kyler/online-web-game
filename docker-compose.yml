@@ -1,0 +1,32 @@
+version: "3.4"
+
+services:
+  onlinewebgame:
+    image: onlinewebgame:latest
+    depends_on:
+      - postgres_db
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      Host: "postgres_db"
+      Port: "5432"
+      Database: "OnlineWebGame"
+      User: "postgres"
+      Password: "postgres"
+
+  postgres_db:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "OnlineWebGame"
+
+volumes:
+  db_volume:

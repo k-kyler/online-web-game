@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +9,7 @@ using OnlineWebGame.Hubs;
 
 namespace OnlineWebGame
 {
-    public class Startup
+  public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -26,13 +21,23 @@ namespace OnlineWebGame
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            // Development
+            // services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            
+            // Production
+            var host = Configuration["Host"] ?? "localhost";
+            var user = Configuration["User"] ?? "postgres";
+            var password = Configuration["Password"] ?? "postgres";
+            var port = Configuration["Port"] ?? "5433";
+            var database = Configuration["Database"] ?? "OnlineWebGame";
+
+            services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql($"Host={host};Port={port};Database={database};User ID={user};Password={password}"));
 
             services.AddSignalR();
-                
-            services.AddControllersWithViews();
 
             services.AddSession();
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

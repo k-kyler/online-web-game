@@ -3,7 +3,6 @@
     Layout = "_Layout";
 }
 
-<h2>Blue Room</h2>
 <div class="position-relative hall h-100">
     <partial name="_ChatPartial" />
     
@@ -12,18 +11,4 @@
     <div class="blueRoom"></div>
 
     <canvas id="blue_room"></canvas>
-    
-    <canvas id="canvas" width=200 height=200></canvas>
-
-    <script>
-      window.onload = function() {
-          var canvas = document.getElementById("canvas");
-          var context = canvas.getContext("2d");
-          context.fillStyle = "green";
-          context.fillRect(50, 50, 100, 100);
-          // no argument defaults to image/png; image/jpeg, etc also work on some
-          // implementations -- image/png is the only one that must be supported per spec.
-          window.location = canvas.toDataURL("image/png");
-      }
-    </script>
 </div>

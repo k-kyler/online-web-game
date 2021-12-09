@@ -7,7 +7,7 @@ services:
       - postgres_db
     build: .
     ports:
-      - "8000:8000"
+      - "80:8000"
     environment:
       Host: "postgres_db"
       Port: "5432"

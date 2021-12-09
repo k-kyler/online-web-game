@@ -171,7 +171,7 @@ html {
 
 .chat-message {
   margin: 0.2rem 0;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .chat-message-username {

@@ -30,15 +30,19 @@ $(document).ready(() => {
 
   const createMessage = async () => {
     try {
-      const response = await fetch(`${PRO_URL}/message/create`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({
-          content: $("#chatInput").val(),
-        }),
-      });
+      const chatInput = $("#chatInput").val();
+
+      if (chatInput) {
+        const response = await fetch(`${PRO_URL}/message/create`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify({
+            content: chatInput,
+          }),
+        });
+      }
     } catch (error) {
       console.error(error);
     }

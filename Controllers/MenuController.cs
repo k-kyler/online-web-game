@@ -24,9 +24,7 @@ namespace OnlineWebGame.Controllers
 
         public IActionResult Exit()
         {
-            // Code here - Clear session
             HttpContext.Session.Clear();
-
             throw new Exception();
         }
     }

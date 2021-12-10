@@ -60,7 +60,7 @@ namespace OnlineWebGame.Controllers
             dao.createUser(user);
             var infoDAO = new UserInfoDAO(_context);
             infoDAO.createUserInfo(userInfo);
-            return Redirect("/");
+            return Redirect("/signin");
         }
     }
 }

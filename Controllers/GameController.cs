@@ -84,14 +84,6 @@ namespace OnlineWebGame.Controllers
             return View();
         }
 
-        //--------------------
-        // NOTE:
-        // At each Room include:
-        // + Guide
-        // + Task 1
-        // + Task 2
-        //--------------------
-
         private void SendUserInfo()
         {
             var userDAO = new UserDAO(_context);

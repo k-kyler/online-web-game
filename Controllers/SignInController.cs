@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineWebGame.DAO;
 using OnlineWebGame.Data;
 using OnlineWebGame.ViewModels;
-using System.Diagnostics;
 
 namespace OnlineWebGame.Controllers
 {
-    public class SignInController : Controller
+  public class SignInController : Controller
     {
         private GameOnlineContext _context;
         public SignInController(GameOnlineContext context)
@@ -44,7 +43,7 @@ namespace OnlineWebGame.Controllers
             }
             HttpContext.Session.SetString("username", user.Username);
             
-            return Redirect("/");
+            return Redirect("/menu");
         }
     }
 }

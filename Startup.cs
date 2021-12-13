@@ -22,16 +22,16 @@ namespace OnlineWebGame
         public void ConfigureServices(IServiceCollection services)
         {
             // Development
-            // services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             
             // Production
-            var host = Configuration["Host"] ?? "localhost";
-            var user = Configuration["User"] ?? "postgres";
-            var password = Configuration["Password"] ?? "postgres";
-            var port = Configuration["Port"] ?? "5433";
-            var database = Configuration["Database"] ?? "OnlineWebGame";
+            // var host = Configuration["Host"] ?? "localhost";
+            // var user = Configuration["User"] ?? "postgres";
+            // var password = Configuration["Password"] ?? "postgres";
+            // var port = Configuration["Port"] ?? "5433";
+            // var database = Configuration["Database"] ?? "OnlineWebGame";
 
-            services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql($"Host={host};Port={port};Database={database};User ID={user};Password={password}"));
+            // services.AddDbContext<GameOnlineContext>(options => options.UseNpgsql($"Host={host};Port={port};Database={database};User ID={user};Password={password}"));
 
             services.AddSignalR();
 

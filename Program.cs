@@ -13,7 +13,7 @@ namespace OnlineWebGame
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => { 
-                    webBuilder.UseUrls("http://*:8000");
+                    // webBuilder.UseUrls("http://*:8000");
                     webBuilder.UseStartup<Startup>(); 
                 });
     }

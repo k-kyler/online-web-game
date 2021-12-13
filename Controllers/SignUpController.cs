@@ -2,13 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineWebGame.Models;
 using OnlineWebGame.DAO;
 using System;
-using System.Diagnostics;
 using OnlineWebGame.ViewModels;
 using OnlineWebGame.Data;
 
 namespace OnlineWebGame.Controllers
 {
-    public class SignUpController : Controller
+  public class SignUpController : Controller
     {
         private GameOnlineContext _context;
         public SignUpController(GameOnlineContext context)
@@ -60,7 +59,7 @@ namespace OnlineWebGame.Controllers
             dao.createUser(user);
             var infoDAO = new UserInfoDAO(_context);
             infoDAO.createUserInfo(userInfo);
-            return Redirect("/");
+            return Redirect("/signin");
         }
     }
 }

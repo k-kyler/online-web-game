@@ -4,7 +4,7 @@ $(document).ready(() => {
 
   const renderChatMessages = async () => {
     try {
-      const response = await fetch(`${PRO_URL}/message`);
+      const response = await fetch(`${DEV_URL}/message`);
       const { messages } = await response.json();
 
       for (let message of messages) {
@@ -33,7 +33,7 @@ $(document).ready(() => {
       const chatInput = $("#chatInput").val();
 
       if (chatInput) {
-        const response = await fetch(`${PRO_URL}/message/create`, {
+        const response = await fetch(`${DEV_URL}/message/create`, {
           headers: {
             "Content-Type": "application/json",
           },

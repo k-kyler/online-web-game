@@ -23,8 +23,11 @@ $(document).ready(() => {
   $("#navbarNav .nav-item:nth-child(3)").click(() => {
     sessionStorage.setItem("nav-item-active", 3);
   });
-
-  $("#navbarNav .nav-item:nth-child(4)").click(() => {
-    sessionStorage.setItem("nav-item-active", 4);
-  });
 });
+
+// Set active nav item when sign up success
+const path = window.location.pathname;
+
+if (path === "/signin") {
+  sessionStorage.setItem("nav-item-active", 2);
+}

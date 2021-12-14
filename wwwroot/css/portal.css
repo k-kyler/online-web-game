@@ -1,0 +1,32 @@
+.hall-map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 928px;
+  height: 478px;
+}
+
+.portal-1 {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+}
+
+.portal-2 {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+}
+
+.portal-3 {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 2.5rem;
+}
+
+.portal-4 {
+  position: absolute;
+  bottom: 2.25rem;
+  right: 2.5rem;
+}

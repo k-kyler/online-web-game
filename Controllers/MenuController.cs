@@ -22,10 +22,13 @@ namespace OnlineWebGame.Controllers
             return Redirect("/Game?gd=" + gd);
         }
 
+        [HttpPost]
+        [Route("/signout")]
         public IActionResult Exit()
         {
             HttpContext.Session.Clear();
-            throw new Exception();
+
+            return Ok(new { code = "success" });
         }
     }
 }

@@ -1,4 +1,7 @@
 $(document).ready(() => {
+    const DEV_URL = "https://localhost:5001";
+    const PRO_URL = "http://localhost:8000";
+
     // Force setting modal to hide when open exit game modal
     $("#exitGameConfirm").click(() => {
         $("#myModal1").modal("hide");
@@ -19,6 +22,21 @@ $(document).ready(() => {
             }
         }
     });
+    
+    // Sign out
+    $("#signOutButton").click(async () => {
+        const response = await fetch(`${DEV_URL}/signout`, {
+            method: "POST"
+        })
+        const { code } = await response.json();
+                
+        if (code === "success") window.location.href = "/"
+    });
+    
+    // Press M to get back to menu page
+    window.addEventListener("keydown", event => {
+        if (event.key === "m") {
+            window.location.href = "/menu"
+        }
+    })
 });
-
-

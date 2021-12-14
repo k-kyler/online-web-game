@@ -1,6 +1,12 @@
 .settings-button {
-    position: absolute;
-    top: 1.25rem;
-    right: 1rem;
-    cursor: pointer;
+  position: absolute;
+  top: 1.25rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+#myModal1 .progress,
+#settingsModal .progress {
+  height: 2.25rem;
+  cursor: pointer;
 }

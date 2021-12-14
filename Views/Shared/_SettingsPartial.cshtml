@@ -2,3 +2,48 @@
 <img src="~/assets/settings.png" width="57" height="57" class="settings-button" id="settingsButton" data-toggle="tooltip" data-placement="left" title="Open settings" />
 
 <!-- Settings modal -->
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">SETTINGS</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h3 class="text-center">Volume</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <h3 class="text-center">Bright</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="exitGameConfirm" type="button" class="btn btn-warning float-right w-100 p-3" data-toggle="modal" data-target="#myModal2">Exit Game</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Exit modal -->
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog modal-dialog-custom">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">EXIT GAME</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">Are you sure you want to exit?</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="signOutButton">Yes, I'm sure</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

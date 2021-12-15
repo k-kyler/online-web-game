@@ -1,4 +1,5 @@
 /* Sign up, sign in and menu */
+.signInForm,
 .signUpForm,
 .menuForm {
   position: absolute;
@@ -7,12 +8,15 @@
   transform: translate(-50%, -50%);
 }
 
-.menuForm > h1 {
-  letter-spacing: 0.5ch;
+.signUpForm h1,
+.signInForm h1,
+.menuForm h1 {
+  letter-spacing: 0.3ch;
 }
 
-.signUpForm > h1,
-.menuForm > h1 {
+.signUpForm h1,
+.signInForm h1,
+.menuForm h1 {
   background: linear-gradient(to right, #b4d5fe 0%, #fef400 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -29,11 +29,6 @@ a.navbar-brand {
   text-shadow: 2px 2px black;
 }
 
-.signUpForm > form > h1 {
-  color: #ffc107;
-  text-shadow: 2px 2px black;
-}
-
 .navbar-brand > span {
   font-weight: 500;
 }

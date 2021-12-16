@@ -3,6 +3,7 @@
   top: 1.25rem;
   right: 1rem;
   cursor: pointer;
+  animation: spin 3s ease infinite forwards;
 }
 
 #myModal1 audio,
@@ -38,4 +39,13 @@
   width: 2rem;
   height: 2rem;
   background: #ffc107;
+}
+
+@keyframes spin {
+  25% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

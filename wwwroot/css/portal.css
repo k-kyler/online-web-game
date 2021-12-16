@@ -7,26 +7,36 @@
   height: 478px;
 }
 
-.portal-1 {
+.portal {
   position: absolute;
+  animation: bounce 1s linear infinite alternate;
+}
+
+.portal-1 {
   top: 2.5rem;
   left: 2.5rem;
 }
 
 .portal-2 {
-  position: absolute;
   top: 2.5rem;
   right: 2.5rem;
 }
 
 .portal-3 {
-  position: absolute;
   bottom: 2.25rem;
   left: 2.5rem;
 }
 
 .portal-4 {
-  position: absolute;
   bottom: 2.25rem;
   right: 2.5rem;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-1.5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
 }

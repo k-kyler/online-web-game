@@ -1,7 +1,4 @@
 $(document).ready(() => {
-  const DEV_URL = "https://localhost:5001";
-  const PRO_URL = "http://localhost:8000";
-
   // Force setting modal to hide when open exit game modal
   $("#exitGameConfirm").click(() => {
     $("#myModal1").modal("hide");

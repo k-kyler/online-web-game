@@ -68,8 +68,8 @@ namespace OnlineWebGame
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-
                 endpoints.MapHub<ChatHub>("/hubs/chat");
+                endpoints.MapHub<MultiplayerHub>("/hubs/multiplayer");
             });
         }
     }

@@ -3,7 +3,7 @@ using OnlineWebGame.Models;
 
 namespace OnlineWebGame.Hubs
 {
-    public interface IChatClient
+  public interface IChatClient
     {
         Task ReceiveMessage(Message message);
     }

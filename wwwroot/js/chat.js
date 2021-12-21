@@ -1,7 +1,4 @@
 $(document).ready(() => {
-  const DEV_URL = "https://localhost:5001";
-  const PRO_URL = "http://localhost:8000";
-
   const renderChatMessages = async () => {
     try {
       const response = await fetch(`${DEV_URL}/message`);
@@ -9,13 +6,15 @@ $(document).ready(() => {
 
       for (let message of messages) {
         $("#chatBox").append(`
-            <li class="chat-message">
-                <span class="chat-message-time">[${new Date(
-                  message.createdAt
-                ).toLocaleTimeString()}]</span>
-                <span class="chat-message-username">${message.username}</span>
-                <span class="chat-message-content">${message.content}</span>
-            </li>
+          <li class="chat-message">
+            <span class="chat-message-time" title="${new Date(
+              message.createdAt
+            ).toLocaleTimeString()}">
+              [${new Date(message.createdAt).toDateString()}]
+            </span>
+            <span class="chat-message-username">${message.username}</span>
+            <span class="chat-message-content">${message.content}</span>
+          </li>
         `);
       }
 
@@ -33,7 +32,7 @@ $(document).ready(() => {
       const chatInput = $("#chatInput").val();
 
       if (chatInput) {
-        const response = await fetch(`${DEV_URL}/message/create`, {
+        await fetch(`${DEV_URL}/message/create`, {
           headers: {
             "Content-Type": "application/json",
           },

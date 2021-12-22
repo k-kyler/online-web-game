@@ -405,6 +405,7 @@ function animate() {
 
     // Draw players
     for (let player of filteredPlayers) {
+      // Draw player image
       let newPlayerSprite = new Image();
 
       newPlayerSprite.src = player.playerSpriteURL;
@@ -419,6 +420,28 @@ function animate() {
         player.player.width,
         player.player.height
       );
+
+      // Draw player username
+      ctx.font = "14px Poppins";
+      ctx.fillStyle = "white";
+      ctx.textAlign = "center";
+
+      if (
+        player.username ===
+        document.getElementById("playerInfoUsername").textContent
+      ) {
+        ctx.fillText(
+          player.username + " (You)",
+          player.player.x + 15,
+          player.player.y - 5
+        );
+      } else {
+        ctx.fillText(
+          player.username,
+          player.player.x + 15,
+          player.player.y - 5
+        );
+      }
 
       // Configure for controlling current player
       if (

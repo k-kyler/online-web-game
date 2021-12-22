@@ -209,6 +209,7 @@ html {
   height: 400px;
   cursor: pointer;
 }
+
 .characters:hover {
   background-color: #343340;
   border-radius: 10px;

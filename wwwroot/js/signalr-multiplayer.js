@@ -1,7 +1,4 @@
-﻿// Players list to store all players drawing data
-let players = [];
-
-// Change 'index' from [0-4]
+﻿// Change 'index' from [0-4]
 // Then:
 //      /Game
 //      /Game/BlueRoom
@@ -364,6 +361,9 @@ function backToHallDoor(player) {
   }
 }
 
+// Players list to store all players drawing data
+let players = [];
+
 // Get all active players
 const getActivePlayers = async () => {
   const response = await fetch(`${DEV_URL}/multiplayer`);
@@ -422,20 +422,21 @@ function animate() {
       );
 
       // Draw player username
-      ctx.font = "14px Poppins";
-      ctx.fillStyle = "white";
+      ctx.font = "500 14px Poppins";
       ctx.textAlign = "center";
 
       if (
         player.username ===
         document.getElementById("playerInfoUsername").textContent
       ) {
+        ctx.fillStyle = "red";
         ctx.fillText(
-          player.username + " (You)",
+          player.username,
           player.player.x + 15,
           player.player.y - 5
         );
       } else {
+        ctx.fillStyle = "white";
         ctx.fillText(
           player.username,
           player.player.x + 15,

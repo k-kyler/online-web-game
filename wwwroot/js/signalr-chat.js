@@ -4,7 +4,7 @@ const signalRChatConnection = new signalR.HubConnectionBuilder()
   .configureLogging(signalR.LogLevel.Information)
   .build();
 
-// Start connection function
+// Start connection
 async function start() {
   try {
     await signalRChatConnection.start();
@@ -14,7 +14,6 @@ async function start() {
   }
 }
 
-// Start connection
 start();
 
 // Event listener to render message

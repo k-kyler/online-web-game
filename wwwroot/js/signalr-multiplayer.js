@@ -1,4 +1,7 @@
-﻿// Change 'index' from [0-4]
+﻿// Players list to store all players drawing data
+let players = [];
+
+// Change 'index' from [0-4]
 // Then:
 //      /Game
 //      /Game/BlueRoom
@@ -111,7 +114,7 @@ if (params.get("gd") == "male") {
   playerSpriteURL = "../assets/marionravenwood.png";
 }
 
-// Configure player movement
+// Configure player movements (using W-A-S-D keys or arrow keys)
 window.addEventListener("keydown", (e) => {
   keys[e.key] = true;
   player.moving = true;
@@ -127,6 +130,16 @@ function movePlayer(player) {
     player.x -= player.speed;
     player.frameY = 1;
     player.moving = true;
+    fetch(`${DEV_URL}/multiplayer/update`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        player,
+        username: document.getElementById("playerInfoUsername").textContent,
+      }),
+    });
   }
   if (
     (keys["ArrowRight"] || keys["d"]) &&
@@ -135,11 +148,31 @@ function movePlayer(player) {
     player.x += player.speed;
     player.frameY = 2;
     player.moving = true;
+    fetch(`${DEV_URL}/multiplayer/update`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        player,
+        username: document.getElementById("playerInfoUsername").textContent,
+      }),
+    });
   }
   if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
     player.y -= player.speed;
     player.frameY = 3;
     player.moving = true;
+    fetch(`${DEV_URL}/multiplayer/update`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        player,
+        username: document.getElementById("playerInfoUsername").textContent,
+      }),
+    });
   }
   if (
     (keys["ArrowDown"] || keys["s"]) &&
@@ -148,14 +181,44 @@ function movePlayer(player) {
     player.y += player.speed;
     player.frameY = 0;
     player.moving = true;
+    fetch(`${DEV_URL}/multiplayer/update`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        player,
+        username: document.getElementById("playerInfoUsername").textContent,
+      }),
+    });
   }
 }
 
 function handlePlayerFrame(player) {
   if (player.frameX < 3 && player.moving) {
     player.frameX++;
+    fetch(`${DEV_URL}/multiplayer/update`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        player,
+        username: document.getElementById("playerInfoUsername").textContent,
+      }),
+    });
   } else {
     player.frameX = 0;
+    fetch(`${DEV_URL}/multiplayer/update`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        player,
+        username: document.getElementById("playerInfoUsername").textContent,
+      }),
+    });
   }
 }
 
@@ -301,9 +364,17 @@ function backToHallDoor(player) {
   }
 }
 
-// Animating to draw all players
-const players = [];
+// Get all active players
+const getActivePlayers = async () => {
+  const response = await fetch(`${DEV_URL}/multiplayer`);
+  const { activePlayers } = await response.json();
 
+  players.push(...activePlayers);
+};
+
+getActivePlayers();
+
+// Animating to draw all players
 let fpsInterval, startTime, now, then, elapsed;
 
 function startAnimating(fps) {
@@ -349,6 +420,7 @@ function animate() {
         player.player.height
       );
 
+      // Configure for controlling current player
       if (
         player.username ===
         document.getElementById("playerInfoUsername").textContent
@@ -370,8 +442,8 @@ const signalRMultiplayerConnection = new signalR.HubConnectionBuilder()
   .configureLogging(signalR.LogLevel.Information)
   .build();
 
-// Start connection function
-async function start() {
+// Start multiplayer connection
+async function multiplayerStart() {
   try {
     await signalRMultiplayerConnection.start();
 
@@ -393,13 +465,12 @@ async function start() {
   }
 }
 
-// Catch if player is disconnected
-signalRMultiplayerConnection.onclose(async () => {
+multiplayerStart();
+
+// Catch if player is disconnected then remove player out of the game
+window.addEventListener("beforeunload", async (event) => {
   await fetch(`${DEV_URL}/multiplayer/inactive`);
 });
-
-// Start connection
-start();
 
 // Event listener to add new player to the game
 signalRMultiplayerConnection.on("AddPlayer", (player) => {
@@ -407,4 +478,11 @@ signalRMultiplayerConnection.on("AddPlayer", (player) => {
 });
 
 // Event listener to remove player from the game when disconnected
-signalRMultiplayerConnection.on("RemovePlayer", (username) => {});
+signalRMultiplayerConnection.on("RemovePlayer", (username) => {
+  players = players.filter((player) => player.username !== username);
+});
+
+// Event listener to update positions of players
+signalRMultiplayerConnection.on("UpdatePositions", (updatedPlayers) => {
+  players = updatedPlayers;
+});

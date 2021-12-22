@@ -9,6 +9,7 @@ namespace OnlineWebGame.DAO
     public class UserDAO
     {
         private GameOnlineContext _db;
+
         public UserDAO(GameOnlineContext db)
         {
             _db = db;
@@ -28,7 +29,7 @@ namespace OnlineWebGame.DAO
         {
             return _db.Users.ToList();
         }
-
+        
         public void createUser(User user)
         {
             var existingUser = _db.Users.FirstOrDefault(u => u.UserId == user.UserId);

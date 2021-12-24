@@ -105,4 +105,37 @@
 
 .playerinfo-users {
   list-style: none;
+  flex: 1;
+  max-height: 251px;
+  overflow-y: auto;
+
+  /* Config for hiding scrollbar */
+  mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 0.5rem, black 0.5rem);
+  mask-size: 100% 1000rem;
+  mask-position: left bottom;
+
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 0.5rem, black 0.5rem);
+  -webkit-mask-size: 100% 1000rem;
+  -webkit-mask-position: left bottom;
+
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+  /* End of config for hiding scrollbar */
+}
+
+.playerinfo-users:hover {
+  -webkit-mask-position: left top;
+}
+
+.playerinfo-users::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.playerinfo-users::-webkit-scrollbar-thumb {
+  background: #d1d2d4;
+}
+
+.playerinfo-users::-webkit-scrollbar-track {
+  background: rgb(241, 241, 241);
 }

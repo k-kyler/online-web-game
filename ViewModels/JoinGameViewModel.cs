@@ -6,5 +6,6 @@ namespace OnlineWebGame.ViewModels
       public PlayerViewModel Player { get; set; }
       public string PlayerSpriteURL { get; set; }
       public int MapIndex { get; set; }
+      public int Level { get; set; }
     }
 }

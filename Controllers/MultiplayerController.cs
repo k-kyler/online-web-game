@@ -44,7 +44,8 @@ namespace OnlineWebGame.Controllers
                     Username = username,
                     Player = player.Player,
                     PlayerSpriteURL = player.PlayerSpriteURL,
-                    MapIndex = player.MapIndex
+                    MapIndex = player.MapIndex,
+                    Level = player.Level
                 });
 
                 await _hubContext.Clients.All.AddPlayer(new JoinGameViewModel()
@@ -52,7 +53,8 @@ namespace OnlineWebGame.Controllers
                     Username = username,
                     Player = player.Player,
                     PlayerSpriteURL = player.PlayerSpriteURL,
-                    MapIndex = player.MapIndex
+                    MapIndex = player.MapIndex,
+                    Level = player.Level
                 });
 
                 return Ok(new { code = "success", message = username + " has joined" });

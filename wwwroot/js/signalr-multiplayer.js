@@ -481,6 +481,9 @@ async function multiplayerStart() {
         player,
         playerSpriteURL,
         mapIndex: index,
+        level: Number.parseInt(
+          document.getElementById("playerLevel").textContent
+        ),
       }),
     });
   } catch (error) {
@@ -509,4 +512,40 @@ signalRMultiplayerConnection.on("RemovePlayer", (username) => {
 // Event listener to update positions of players
 signalRMultiplayerConnection.on("UpdatePositions", (updatedPlayers) => {
   players = updatedPlayers;
+});
+
+// Player info modal setup & data
+$(document).ready(() => {
+  // Open player info modal
+  $("#playerInfoModalTrigger").click(() => {
+    $("#playerInfoModal").modal("show");
+
+    // Add all active players to the current player info modal
+    $("#activePlayersList").html("");
+
+    for (let activePlayer of players) {
+      $("#activePlayersList").append(`
+        <li class="d-flex align-items-center justify-content-between mb-3 pr-2">
+          <div class="d-flex align-items-center">
+            <div class="playerinfo-avatar position-relative">
+              <img class="rounded-circle" width="57" height="57" src="${
+                activePlayer.playerSpriteURL.includes("indianajones")
+                  ? `${DEV_URL}/assets/gentleman_character.png`
+                  : `${DEV_URL}/assets/ladygirl_character.png`
+              }" />
+              <div class="playerinfo-level rounded-circle">
+                  <span>${activePlayer.level}</span>
+              </div>
+            </div>
+
+            <p class="mb-0 ml-2">${activePlayer.username}</p>
+          </div>
+
+          <span style="font-size: 1.5rem; color: greenyellow;">
+            <i class="fas fa-toggle-on"></i>
+          </span>
+        </li>
+      `);
+    }
+  });
 });

@@ -514,16 +514,14 @@ signalRMultiplayerConnection.on("UpdatePositions", (updatedPlayers) => {
   players = updatedPlayers;
 });
 
-// Player info modal setup & data
+// Player info modal setup, view high scores, search & retrieve other active players data
 $(document).ready(() => {
-  // Open player info modal
-  $("#playerInfoModalTrigger").click(() => {
-    $("#playerInfoModal").modal("show");
-
+  // Function to render active players on list
+  function renderActivePlayers(activePlayers) {
     // Add all active players to the current player info modal
     $("#activePlayersList").html("");
 
-    for (let activePlayer of players) {
+    for (let activePlayer of activePlayers) {
       $("#activePlayersList").append(`
         <li class="d-flex align-items-center justify-content-between mb-3 pr-2">
           <div class="d-flex align-items-center">
@@ -546,6 +544,36 @@ $(document).ready(() => {
           </span>
         </li>
       `);
+    }
+  }
+
+  // Open player info modal
+  $("#playerInfoModalTrigger").click(() => {
+    $("#playerInfoModal").modal("show");
+    renderActivePlayers(players);
+  });
+
+  // Search for active players in list
+  $("#searchPlayerInput").change((event) => {
+    const searchInput = event.target.value;
+
+    if (searchInput) {
+      const results = players.filter((player) =>
+        player.username.includes(searchInput)
+      );
+
+      if (results.length) {
+        renderActivePlayers(results);
+      } else {
+        $("#activePlayersList").html("");
+        $("#activePlayersList").append(`
+          <li class="d-flex align-items-center justify-content-center pr-2">
+            <span>No players found</span>
+          </li>
+        `);
+      }
+    } else {
+      renderActivePlayers(players);
     }
   });
 });

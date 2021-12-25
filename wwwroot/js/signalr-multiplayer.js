@@ -553,6 +553,18 @@ $(document).ready(() => {
     renderActivePlayers(players);
   });
 
+  // Press I to open player info modal
+  $(document).keydown((event) => {
+    if (event.key === "i") {
+      if ($("#playerInfoModal").modal("hide")) {
+        $("#playerInfoModal").modal("show");
+        renderActivePlayers(players);
+      } else if ($("#playerInfoModal").modal("show")) {
+        $("#playerInfoModal").modal("hide");
+      }
+    }
+  });
+
   // Search for active players in list
   $("#searchPlayerInput").change((event) => {
     const searchInput = event.target.value;

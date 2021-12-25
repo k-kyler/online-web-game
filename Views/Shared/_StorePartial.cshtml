@@ -1,4 +1,57 @@
 <!-- Store button -->
-<img src="~/assets/store.png" width="60" height="60" class="store-button" id="storeButton" data-toggle="tooltip" data-placement="left" title="Open stamina store" />
+<img src="~/assets/store.png" width="60" height="60" class="store-button" id="storeTrigger" data-toggle="tooltip" data-placement="left" title="Open stamina store" />
 
 <!-- Store modal -->
+<div class="modal fade" id="storeModal" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-custom">
+        <div class="modal-content">
+            <div class="modal-header align-items-center justify-content-center" style="border-bottom: none;">
+                <h5 class="modal-title">Stamina Store</h5>
+                <button type="button" class="close position-absolute" style="right: 1rem; outline: none;" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="d-flex align-items-center justify-content-between mb-5">
+                      @* Package 1 *@
+                      <div class="d-flex flex-column align-items-center p-4 stamina-package">
+                        <img class="mb-3" src="~/assets/stamina.png" height="50">
+                        <p class="mb-3">+100</p>
+                        <p class="mb-3">Price: 10 Coin</p>
+                        <button type="button" class="btn btn-warning">Buy</button>
+                      </div>
+
+                      @* Package 2 *@
+                      <div class="d-flex flex-column align-items-center p-4 stamina-package">
+                        <div class="stamina-2 position-relative mb-3">
+                          <img class="position-absolute" src="~/assets/stamina.png" height="50">
+                          <img class="position-absolute" src="~/assets/stamina.png" height="50">
+                        </div>
+                        <p class="mb-3">+200</p>
+                        <p class="mb-3">Price: 15 Coin</p>
+                        <button type="button" class="btn btn-warning">Buy</button>
+                      </div>
+
+                      @* Package 3 *@
+                      <div class="d-flex flex-column align-items-center p-4 stamina-package">
+                        <div class="stamina-3 position-relative mb-3">
+                          <img class="position-absolute" src="~/assets/stamina.png" height="50">
+                          <img class="position-absolute" src="~/assets/stamina.png" height="50">
+                          <img class="position-absolute" src="~/assets/stamina.png" height="50">
+                        </div>
+                        <p class="mb-3">+300</p>
+                        <p class="mb-3">Price: 20 Coin</p>
+                        <button type="button" class="btn btn-warning">Buy</button>
+                      </div>
+                    </div>
+
+                    <div class="px-4 coin-amount d-flex align-items-center justify-content-between">
+                      <h4>Coin: 480</h4>
+                      
+                      @* Error message *@
+                      <p class="text-danger">Your coin is not enough</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

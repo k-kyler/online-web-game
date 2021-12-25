@@ -80,3 +80,43 @@
     transform: rotate(0);
   }
 }
+
+.stamina-package p {
+  color: gray;
+  font-weight: 500;
+}
+
+.stamina-2,
+.stamina-3 {
+  width: 50px;
+  height: 50px;
+}
+
+.stamina-2 > img:first-child {
+  top: -1rem;
+  left: -0.5rem;
+}
+
+.stamina-2 > img:nth-child(2) {
+  top: 0.25rem;
+  left: 1.5rem;
+}
+
+.stamina-3 > img:first-child {
+  top: 0.25rem;
+  left: -1.75rem;
+}
+
+.stamina-3 > img:nth-child(2) {
+  top: -1rem;
+  left: 0.5rem;
+}
+
+.stamina-3 > img:nth-child(3) {
+  top: 0.25rem;
+  left: 2.5rem;
+}
+
+.coin-amount > h4 {
+  color: gray;
+}

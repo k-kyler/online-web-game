@@ -9,3 +9,8 @@ $(document).ready(() => {
 // URLs to request
 const DEV_URL = "https://localhost:5001";
 const PRO_URL = "http://localhost:8000";
+
+// Loading configuration
+setTimeout(() => {
+  document.getElementById("gameMap").style.opacity = "1";
+}, 3000);

@@ -1,28 +1,80 @@
-.home_page, #hall_map, #blue_room, #green_room, #red_room, #purple_room {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 12px;
+.home_page,
+#hall_map,
+#blue_room,
+#green_room,
+#red_room,
+#purple_room {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
 }
 
 .homePage {
-    background: url("../assets/home_background.jpg") no-repeat center / cover;
-    height: 100%;
+  background: url("../assets/home_background.jpg") no-repeat center / cover;
+  height: 100%;
 }
 .blueRoom {
-    background: url("../assets/blue_background.jpg") no-repeat center / cover;
-    height: 100%;
+  background: url("../assets/blue_background.jpg") no-repeat center / cover;
+  height: 100%;
 }
 .greenRoom {
-    background: url("../assets/green_background.jpg") no-repeat center / cover;
-    height: 100%;
+  background: url("../assets/green_background.jpg") no-repeat center / cover;
+  height: 100%;
 }
 .redRoom {
-    background: url("../assets/red_background.jpg") no-repeat center / cover;
-    height: 100%;
+  background: url("../assets/red_background.jpg") no-repeat center / cover;
+  height: 100%;
 }
 .purpleRoom {
-    background: url("../assets/purple_background.jpg") no-repeat center / cover;
-    height: 100%;
+  background: url("../assets/purple_background.jpg") no-repeat center / cover;
+  height: 100%;
+}
+
+.game-map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 928px;
+  height: 478px;
+}
+
+#gameMap {
+  opacity: 0;
+}
+
+.portal {
+  position: absolute;
+  animation: bounce 1s linear infinite alternate;
+}
+
+.portal-1 {
+  top: 2.5rem;
+  left: 2.5rem;
+}
+
+.portal-2 {
+  top: 2.5rem;
+  right: 2.5rem;
+}
+
+.portal-3 {
+  bottom: 2.25rem;
+  left: 2.5rem;
+}
+
+.portal-4 {
+  bottom: 2.25rem;
+  right: 2.5rem;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-1.5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
 }

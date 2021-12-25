@@ -2,15 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using OnlineWebGame.DAO;
 using OnlineWebGame.Data;
-using OnlineWebGame.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OnlineWebGame.Controllers
 {
-    public class GameController : Controller
+  public class GameController : Controller
     {
         private GameOnlineContext _context;
         public GameController(GameOnlineContext context)
@@ -76,12 +72,6 @@ namespace OnlineWebGame.Controllers
             }
 
             return Redirect("/signin");
-        }
-
-        public IActionResult Loading()
-        {
-            // This is Loading Page
-            return View();
         }
 
         private void SendUserInfo()

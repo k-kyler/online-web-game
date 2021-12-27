@@ -70,11 +70,37 @@
   right: 2.5rem;
 }
 
+.portal-green-room {
+  bottom: 2.5rem;
+  right: 7rem;
+}
+
+.task {
+  position: absolute;
+  animation: flip 1s linear infinite alternate;
+}
+
+.task-green-room-1 {
+  top: 2.5rem;
+  right: 0.75rem;
+}
+
+.task-green-room-2 {
+  right: 17rem;
+  bottom: 7.75rem;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(-1.5rem);
   }
   to {
     transform: translateY(0rem);
+  }
+}
+
+@keyframes flip {
+  to {
+    transform: rotateY(180deg);
   }
 }

@@ -75,19 +75,44 @@
   right: 7rem;
 }
 
+.portal-red-room {
+  bottom: 5.5rem;
+  left: 15.5rem;
+}
+
+.portal-purple-room {
+  right: 5rem;
+  top: 2.5rem;
+}
+
+.portal-blue-room {
+  bottom: 2.25rem;
+  left: 22rem;
+}
+
 .task {
   position: absolute;
   animation: flip 1s linear infinite alternate;
 }
 
-.task-green-room-1 {
-  top: 2.5rem;
-  right: 0.75rem;
-}
-
-.task-green-room-2 {
+.task-green-room {
   right: 17rem;
   bottom: 7.75rem;
+}
+
+.task-red-room {
+  bottom: 14rem;
+  left: 15.75rem;
+}
+
+.task-purple-room {
+  right: 12.75rem;
+  bottom: 10.75rem;
+}
+
+.task-blue-room {
+  right: 11.75rem;
+  bottom: 9rem;
 }
 
 @keyframes bounce {

@@ -122,73 +122,78 @@ window.addEventListener("keyup", (e) => {
   player.moving = false;
 });
 
+let isPlayingMiniGame = false
+
 function movePlayer(player) {
-  if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
-    player.x -= player.speed;
-    player.frameY = 1;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
-  if (
-    (keys["ArrowRight"] || keys["d"]) &&
-    player.x < canvas.width - player.width
-  ) {
-    player.x += player.speed;
-    player.frameY = 2;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
-  if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
-    player.y -= player.speed;
-    player.frameY = 3;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
-  if (
-    (keys["ArrowDown"] || keys["s"]) &&
-    player.y < canvas.height - player.height
-  ) {
-    player.y += player.speed;
-    player.frameY = 0;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
+    if (!isPlayingMiniGame) {
+        if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
+            player.x -= player.speed;
+            player.frameY = 1;
+            player.moving = true;
+            fetch(`${DEV_URL}/multiplayer/update`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    player,
+                    username: document.getElementById("playerInfoUsername").textContent,
+                }),
+            });
+        }
+        if (
+            (keys["ArrowRight"] || keys["d"]) &&
+            player.x < canvas.width - player.width
+        ) {
+            player.x += player.speed;
+            player.frameY = 2;
+            player.moving = true;
+            fetch(`${DEV_URL}/multiplayer/update`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    player,
+                    username: document.getElementById("playerInfoUsername").textContent,
+                }),
+            });
+        }
+        if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
+            player.y -= player.speed;
+            player.frameY = 3;
+            player.moving = true;
+            fetch(`${DEV_URL}/multiplayer/update`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    player,
+                    username: document.getElementById("playerInfoUsername").textContent,
+                }),
+            });
+        }
+        if (
+            (keys["ArrowDown"] || keys["s"]) &&
+            player.y < canvas.height - player.height
+        ) {
+            player.y += player.speed;
+            player.frameY = 0;
+            player.moving = true;
+            fetch(`${DEV_URL}/multiplayer/update`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    player,
+                    username: document.getElementById("playerInfoUsername").textContent,
+                }),
+            });
+        }
+    }
+  
 }
 
 function handlePlayerFrame(player) {
@@ -462,6 +467,8 @@ function startAnimating(fps) {
   startTime = then;
   animate();
 }
+
+
 
 function animate() {
   requestAnimationFrame(animate);

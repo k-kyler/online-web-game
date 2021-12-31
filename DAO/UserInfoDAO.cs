@@ -1,5 +1,6 @@
 ﻿using OnlineWebGame.Data;
 using OnlineWebGame.Models;
+using OnlineWebGame.ViewModels;
 using System;
 using System.Linq;
 
@@ -22,6 +23,22 @@ namespace OnlineWebGame.DAO
         public UserInfo getById(Guid id)
         {
             return _db.UserInfos.FirstOrDefault(u => u.User.UserId == id);
+        }
+
+        public void updateUserInfo(UpdateUserInfoViewModel user, Guid userInfoId)
+        {
+            var existingUser = _db.UserInfos.FirstOrDefault(u => u.UserInfoId == userInfoId);
+
+            if (existingUser is null)
+            {
+                throw new NullReferenceException();
+            }
+
+            existingUser.Coin = user.Coin;
+            existingUser.Stamina = user.Stamina;
+            existingUser.Exp = user.Exp;
+            existingUser.Level = user.Level;
+            _db.SaveChanges();
         }
     }
 }

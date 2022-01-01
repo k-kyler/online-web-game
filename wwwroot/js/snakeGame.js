@@ -86,6 +86,7 @@
                 $('#dp-stamina-progress').css("width",stamina+"%")
                 $('#dp-exp').html(Math.ceil((exp % 1000) * 100 / 1000) + "%")
                 $('#dp-exp-progress').css("width", Math.ceil((exp % 1000) * 100 / 1000) + "%")
+                $('#dp-coin').html("Coin: " + coin)
 
                 gameState.current = gameState.ready
                 drawReady()

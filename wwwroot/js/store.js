@@ -75,16 +75,16 @@ $(document).ready(() => {
                 $('#dp-stamina').html(stamina + "%")
                 $('#dp-stamina-progress').css("width", stamina + "%")
                 $('#dp-coin').html("Coin: " + coin)
-                $('#dp-error-message').html("")
-                $('#dp-success-message').html("Purchased!!!")
+                $('#dp-error-message').attr("class", "text-success")
+                $('#dp-error-message').html("Purchased!!!")
             }
             else {
-                $('#dp-success-message').html("")
+                $('#dp-error-message').attr("class", "text-danger")
                 $('#dp-error-message').html("Your stamina is full")
             }
         }
         else {
-            $('#dp-success-message').html("")
+            $('#dp-error-message').attr("class", "text-danger")
             $('#dp-error-message').html("Your coin is not enough")
         }
     });
@@ -99,16 +99,16 @@ $(document).ready(() => {
                 $('#dp-stamina').html(stamina + "%")
                 $('#dp-stamina-progress').css("width", stamina + "%")
                 $('#dp-coin').html("Coin: " + coin)
-                $('#dp-error-message').html("")
-                $('#dp-success-message').html("Purchased!!!")
+                $('#dp-error-message').attr("class", "text-success")
+                $('#dp-error-message').html("Purchased!!!")
             }
             else {
-                $('#dp-success-message').html("")
+                $('#dp-error-message').attr("class", "text-danger")
                 $('#dp-error-message').html("Your stamina is full")
             }
         }
         else {
-            $('#dp-success-message').html("")
+            $('#dp-error-message').attr("class", "text-danger")
             $('#dp-error-message').html("Your coin is not enough")
         }
     });
@@ -123,16 +123,16 @@ $(document).ready(() => {
                 $('#dp-stamina').html(stamina + "%")
                 $('#dp-stamina-progress').css("width", stamina + "%")
                 $('#dp-coin').html("Coin: " + coin)
-                $('#dp-error-message').html("")
-                $('#dp-success-message').html("Purchased!!!")
+                $('#dp-error-message').attr("class", "text-success")
+                $('#dp-error-message').html("Purchased!!!")
             }
             else {
-                $('#dp-success-message').html("")
+                $('#dp-error-message').attr("class", "text-danger")
                 $('#dp-error-message').html("Your stamina is full")
             }
         }
         else {
-            $('#dp-success-message').html("")
+            $('#dp-error-message').attr("class", "text-danger")
             $('#dp-error-message').html("Your coin is not enough")
         }
     });

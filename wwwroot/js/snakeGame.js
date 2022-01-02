@@ -75,17 +75,6 @@
 
                 break
             case gameState.over:
-                coin += score
-                exp += score * 2
-                level = Math.ceil(exp / 1000)
-
-                setUserInfo()
-
-                $('#playerLevel').html(level)
-                $('#dp-stamina').html(stamina + "%")
-                $('#dp-stamina-progress').css("width",stamina+"%")
-                $('#dp-exp').html(Math.ceil((exp % 1000) * 100 / 1000) + "%")
-                $('#dp-exp-progress').css("width", Math.ceil((exp % 1000) * 100 / 1000) + "%")
 
                 gameState.current = gameState.ready
                 drawReady()
@@ -210,6 +199,19 @@
             clearInterval(game)
             snakeCtx.fillStyle = "#70c5ce"
             snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height)
+
+            coin += score
+            exp += score * 2
+            level = Math.ceil(exp / 1000)
+
+            setUserInfo()
+
+            $('#playerLevel').html(level)
+            $('#dp-stamina').html(stamina + "%")
+            $('#dp-stamina-progress').css("width", stamina + "%")
+            $('#dp-exp').html(Math.ceil((exp % 1000) * 100 / 1000) + "%")
+            $('#dp-exp-progress').css("width", Math.ceil((exp % 1000) * 100 / 1000) + "%")
+            $('#dp-coin').html("Coin: " + coin)
 
             snakeCtx.fillStyle = "white"
             snakeCtx.font = "50px Arial"

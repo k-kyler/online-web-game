@@ -222,7 +222,7 @@
             }
             snakeCtx.fillStyle = "white"
             snakeCtx.font = "50px Arial"
-            snakeCtx.fillText("Best Score: " + localStorage.getItem("score"), 5 * box, 10 * box)
+            snakeCtx.fillText("Best Score: " + localStorage.getItem("bestScoreSnake"), 5 * box, 10 * box)
         }
         snake.unshift(newHead)
 

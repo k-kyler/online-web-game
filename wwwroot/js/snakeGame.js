@@ -201,7 +201,7 @@
             snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height)
 
             coin += score
-            exp += score * 2
+            exp += (score * 2)
             level = Math.ceil(exp / 1000)
 
             setUserInfo()

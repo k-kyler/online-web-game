@@ -260,8 +260,8 @@ var blueDoorBack = {
 var blueRoomGame = {
     x: 700,
     y: 287,
-    width: 40,
-    height: 40,
+    width: 45,
+    height: 45,
 };
 
 // Green door enter and get back locations
@@ -278,10 +278,10 @@ var greenDoorBack = {
   height: 78,
 };
 var greenRoomGame = {
-    x: 1,
-    y: 1,
-    width: 64,
-    height: 32,
+    x: 610,
+    y: 310,
+    width: 45,
+    height: 45,
 };
 
 // Purple door enter and get back locations
@@ -425,13 +425,17 @@ function enterPortal(player) {
     }
     if (
         keys["e"] &&
-        x >= greenDoorBack.x &&
-        x <= greenDoorBack.x + greenDoorBack.width &&
-        y >= greenDoorBack.y &&
-        y <= greenDoorBack.y + greenDoorBack.height &&
+        x >= greenRoomGame.x &&
+        x <= greenRoomGame.x + greenRoomGame.width &&
+        y >= greenRoomGame.y &&
+        y <= greenRoomGame.y + greenRoomGame.height &&
         index == 2
     ) {
-        window.location.pathname = "/Game";
+        if ($("#flappyGameModal").modal("hide")) {
+            $("#flappyGameModal").modal("show");
+        } else if ($("#flappyGameModal").modal("show")) {
+            $("#flappyGameModal").modal("hide");
+        }
     }
     if (
         keys["e"] &&

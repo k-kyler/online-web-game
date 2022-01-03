@@ -37,4 +37,6 @@ https://localhost:5001
 http://172.143.1.23
 ```
 
-### Powered by KKL Software Team
+---
+
+Powered by KKL Software Team

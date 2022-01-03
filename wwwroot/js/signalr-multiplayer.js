@@ -233,10 +233,10 @@ var redDoorBack = {
   height: 63,
 };
 var redRoomGame = {
-    x: 1,
-    y: 1,
-    width: 64,
-    height: 32,
+  x: 1,
+  y: 1,
+  width: 64,
+  height: 32,
 };
 
 // Blue door enter and get back locations
@@ -253,10 +253,10 @@ var blueDoorBack = {
   height: 32,
 };
 var blueRoomGame = {
-    x: 700,
-    y: 287,
-    width: 40,
-    height: 40,
+  x: 700,
+  y: 287,
+  width: 40,
+  height: 40,
 };
 
 // Green door enter and get back locations
@@ -273,10 +273,10 @@ var greenDoorBack = {
   height: 78,
 };
 var greenRoomGame = {
-    x: 1,
-    y: 1,
-    width: 64,
-    height: 32,
+  x: 1,
+  y: 1,
+  width: 64,
+  height: 32,
 };
 
 // Purple door enter and get back locations
@@ -293,10 +293,10 @@ var purpleDoorBack = {
   height: 32,
 };
 var purpleRoomGame = {
-    x: 1,
-    y: 1,
-    width: 64,
-    height: 32,
+  x: 1,
+  y: 1,
+  width: 64,
+  height: 32,
 };
 
 function enterDoor(player) {
@@ -352,8 +352,8 @@ function backToHallDoor(player) {
     x >= redDoorBack.x &&
     x <= redDoorBack.x + redDoorBack.width &&
     y >= redDoorBack.y &&
-      y <= redDoorBack.y + redDoorBack.height &&
-      index == 3
+    y <= redDoorBack.y + redDoorBack.height &&
+    index == 3
   ) {
     window.location.pathname = "/Game";
   }
@@ -362,8 +362,8 @@ function backToHallDoor(player) {
     x >= blueDoorBack.x &&
     x <= blueDoorBack.x + blueDoorBack.width &&
     y >= blueDoorBack.y &&
-      y <= blueDoorBack.y + blueDoorBack.height &&
-      index == 1
+    y <= blueDoorBack.y + blueDoorBack.height &&
+    index == 1
   ) {
     window.location.pathname = "/Game";
   }
@@ -372,8 +372,8 @@ function backToHallDoor(player) {
     x >= greenDoorBack.x &&
     x <= greenDoorBack.x + greenDoorBack.width &&
     y >= greenDoorBack.y &&
-      y <= greenDoorBack.y + greenDoorBack.height &&
-      index == 2
+    y <= greenDoorBack.y + greenDoorBack.height &&
+    index == 2
   ) {
     window.location.pathname = "/Game";
   }
@@ -382,62 +382,62 @@ function backToHallDoor(player) {
     x >= purpleDoorBack.x &&
     x <= purpleDoorBack.x + purpleDoorBack.width &&
     y >= purpleDoorBack.y &&
-      y <= purpleDoorBack.y + purpleDoorBack.height &&
-      index == 4
+    y <= purpleDoorBack.y + purpleDoorBack.height &&
+    index == 4
   ) {
     window.location.pathname = "/Game";
   }
 }
 
 function enterPortal(player) {
-    let x, y;
+  let x, y;
 
-    x = player.x + player.width / 2;
-    y = player.y + player.height / 2;
-    if (
-        keys["e"] &&
-        x >= redDoorBack.x &&
-        x <= redDoorBack.x + redDoorBack.width &&
-        y >= redDoorBack.y &&
-        y <= redDoorBack.y + redDoorBack.height &&
-        index == 3
-    ) {
-        window.location.pathname = "/Game";
+  x = player.x + player.width / 2;
+  y = player.y + player.height / 2;
+  if (
+    keys["e"] &&
+    x >= redDoorBack.x &&
+    x <= redDoorBack.x + redDoorBack.width &&
+    y >= redDoorBack.y &&
+    y <= redDoorBack.y + redDoorBack.height &&
+    index == 3
+  ) {
+    window.location.pathname = "/Game";
+  }
+  if (
+    keys["e"] &&
+    x >= blueRoomGame.x &&
+    x <= blueRoomGame.x + blueRoomGame.width &&
+    y >= blueRoomGame.y &&
+    y <= blueRoomGame.y + blueRoomGame.height &&
+    index == 1
+  ) {
+    if ($("#snakeGameModal").modal("hide")) {
+      $("#snakeGameModal").modal("show");
+    } else if ($("#snakeGameModal").modal("show")) {
+      $("#snakeGameModal").modal("hide");
     }
-    if (
-        keys["e"] &&
-        x >= blueRoomGame.x &&
-        x <= blueRoomGame.x + blueRoomGame.width &&
-        y >= blueRoomGame.y &&
-        y <= blueRoomGame.y + blueRoomGame.height &&
-        index == 1
-    ) {
-        if ($("#snakeGameModal").modal("hide")) {
-            $("#snakeGameModal").modal("show");
-        } else if ($("#snakeGameModal").modal("show")) {
-            $("#snakeGameModal").modal("hide");
-        }
-    }
-    if (
-        keys["e"] &&
-        x >= greenDoorBack.x &&
-        x <= greenDoorBack.x + greenDoorBack.width &&
-        y >= greenDoorBack.y &&
-        y <= greenDoorBack.y + greenDoorBack.height &&
-        index == 2
-    ) {
-        window.location.pathname = "/Game";
-    }
-    if (
-        keys["e"] &&
-        x >= purpleDoorBack.x &&
-        x <= purpleDoorBack.x + purpleDoorBack.width &&
-        y >= purpleDoorBack.y &&
-        y <= purpleDoorBack.y + purpleDoorBack.height &&
-        index == 4
-    ) {
-        window.location.pathname = "/Game";
-    }
+  }
+  if (
+    keys["e"] &&
+    x >= greenDoorBack.x &&
+    x <= greenDoorBack.x + greenDoorBack.width &&
+    y >= greenDoorBack.y &&
+    y <= greenDoorBack.y + greenDoorBack.height &&
+    index == 2
+  ) {
+    window.location.pathname = "/Game";
+  }
+  if (
+    keys["e"] &&
+    x >= purpleDoorBack.x &&
+    x <= purpleDoorBack.x + purpleDoorBack.width &&
+    y >= purpleDoorBack.y &&
+    y <= purpleDoorBack.y + purpleDoorBack.height &&
+    index == 4
+  ) {
+    window.location.pathname = "/Game";
+  }
 }
 
 // Players list to store all players drawing data
@@ -529,13 +529,13 @@ function animate() {
         document.getElementById("playerInfoUsername").textContent
       ) {
         movePlayer(player.player);
-          handlePlayerFrame(player.player);
-          if (index == 0) {
-              enterDoor(player.player);
-          }
-        
-          backToHallDoor(player.player);
-          enterPortal(player.player);
+        handlePlayerFrame(player.player);
+        if (index == 0) {
+          enterDoor(player.player);
+        }
+
+        backToHallDoor(player.player);
+        enterPortal(player.player);
       }
     }
   }
@@ -601,8 +601,8 @@ signalRMultiplayerConnection.on("UpdatePositions", (updatedPlayers) => {
 $(document).ready(() => {
   // Function to render active players on list
   function renderActivePlayers(activePlayers) {
-    // Add all active players to the current player info modal
     $("#activePlayersList").html("");
+    activePlayers = activePlayers.sort((a, b) => a.level > b.level && -1);
 
     for (let activePlayer of activePlayers) {
       $("#activePlayersList").append(`

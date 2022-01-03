@@ -238,10 +238,10 @@ var redDoorBack = {
   height: 63,
 };
 var redRoomGame = {
-    x: 1,
-    y: 1,
-    width: 64,
-    height: 32,
+    x: 250,
+    y: 215,
+    width: 45,
+    height: 45,
 };
 
 // Blue door enter and get back locations
@@ -401,13 +401,17 @@ function enterPortal(player) {
     y = player.y + player.height / 2;
     if (
         keys["e"] &&
-        x >= redDoorBack.x &&
-        x <= redDoorBack.x + redDoorBack.width &&
-        y >= redDoorBack.y &&
-        y <= redDoorBack.y + redDoorBack.height &&
+        x >= redRoomGame.x &&
+        x <= redRoomGame.x + redRoomGame.width &&
+        y >= redRoomGame.y &&
+        y <= redRoomGame.y + redRoomGame.height &&
         index == 3
     ) {
-        window.location.pathname = "/Game";
+        if ($("#game2048Modal").modal("hide")) {
+            $("#game2048Modal").modal("show");
+        } else if ($("#game2048Modal").modal("show")) {
+            $("#game2048Modal").modal("hide");
+        }
     }
     if (
         keys["e"] &&

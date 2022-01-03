@@ -259,7 +259,7 @@
                     score.value += 1
 
                     score.best = Math.max(score.value, score.best)
-                    localStorage.setItem("best", score.best)
+                    localStorage.setItem("bestScoreFlappy", score.best)
                 }
             }
         },

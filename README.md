@@ -1,10 +1,10 @@
-# Online 2D web game using ASP .NET Core MVC
+# Online 2D web game using ASP .NET Core MVC and HTML5 Canvas
 
 @Authors: To Vinh Khang, Bui Quang Khai, Du Thuan Long
 
 ## Description
 
-Online 2D web game is a university project of I and my friends. We have used ASP .NET Core MVC and its main feature (SignalR) to create the real-time playing area between players so that the player can communicate and see other players.
+Online 2D web game is a university project of I and my friends. We have used ASP .NET Core MVC with its main feature (SignalR) and HTML5 Canvas to create the real-time playing area between players so that the player can communicate and see other players.
 
 ## Project report
 

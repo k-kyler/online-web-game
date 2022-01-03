@@ -225,14 +225,14 @@ function handlePlayerFrame(player) {
 
 // Red door enter and get back locations
 var redDoor = {
-  x: 96,
-  y: 96,
+  x: 49,
+  y: 40,
   width: 32,
   height: 32,
 };
 var redDoorBack = {
-  x: 900,
-  y: 415,
+  x: 255,
+  y: 337,
   width: 59,
   height: 63,
 };
@@ -245,14 +245,14 @@ var redRoomGame = {
 
 // Blue door enter and get back locations
 var blueDoor = {
-  x: 96,
-  y: 351,
+  x: 49,
+  y: 390,
   width: 32,
   height: 32,
 };
 var blueDoorBack = {
-  x: 896,
-  y: 1,
+  x: 365,
+  y: 389,
   width: 63,
   height: 32,
 };
@@ -265,14 +265,14 @@ var blueRoomGame = {
 
 // Green door enter and get back locations
 var greenDoor = {
-  x: 799,
-  y: 96,
+  x: 849,
+  y: 40,
   width: 32,
   height: 32,
 };
 var greenDoorBack = {
-  x: 1,
-  y: 400,
+  x: 770,
+  y: 377,
   width: 64,
   height: 78,
 };
@@ -285,14 +285,14 @@ var greenRoomGame = {
 
 // Purple door enter and get back locations
 var purpleDoor = {
-  x: 799,
-  y: 351,
+  x: 849,
+  y: 390,
   width: 32,
   height: 32,
 };
 var purpleDoorBack = {
-  x: 1,
-  y: 1,
+  x: 810,
+  y: 30,
   width: 64,
   height: 32,
 };

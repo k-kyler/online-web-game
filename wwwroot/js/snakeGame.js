@@ -261,16 +261,16 @@
     document.addEventListener("keydown", keyPress)
     let direction
     function keyPress(e) {
-        if (e.keyCode === 37 && direction != "RIGHT") {
+        if (e.keyCode === 65 && direction != "RIGHT") {
             direction = "LEFT"
         }
-        else if (e.keyCode === 38 && direction != "DOWN") {
+        else if (e.keyCode === 87 && direction != "DOWN") {
             direction = "UP"
         }
-        else if (e.keyCode === 39 && direction != "LEFT") {
+        else if (e.keyCode === 68 && direction != "LEFT") {
             direction = "RIGHT"
         }
-        else if (e.keyCode === 40 && direction != "UP") {
+        else if (e.keyCode === 83 && direction != "UP") {
             direction = "DOWN"
         }
     }

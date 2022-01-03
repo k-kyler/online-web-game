@@ -214,7 +214,7 @@
     document.addEventListener('keyup', keyPress)
 
     function keyPress(e) {
-        if (e.keyCode === 37) {
+        if (e.keyCode === 65) {
             currentGrid = squareValues.slice();
             wipeLeft()
             combineRow()
@@ -224,7 +224,7 @@
             changeColor()
             checkGameOver()
         }
-        else if (e.keyCode === 38) {
+        else if (e.keyCode === 87) {
             currentGrid = squareValues.slice();
             wipeUp()
             conbineCol()
@@ -234,7 +234,7 @@
             changeColor()
             checkGameOver()
         }
-        else if (e.keyCode === 39) {
+        else if (e.keyCode === 68) {
             currentGrid = squareValues.slice();
             wipeRight()
             combineRow()
@@ -244,7 +244,7 @@
             changeColor()
             checkGameOver()
         }
-        else if (e.keyCode === 40) {
+        else if (e.keyCode === 83) {
             currentGrid = squareValues.slice();
             wipeDown()
             conbineCol()

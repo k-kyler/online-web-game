@@ -15,9 +15,9 @@
                       @* Package 1 *@
                       <div class="d-flex flex-column align-items-center p-4 stamina-package">
                         <img class="mb-3" src="~/assets/stamina.png" height="50">
-                        <p class="mb-3">+100</p>
+                        <p class="mb-3">+10</p>
                         <p class="mb-3">Price: 10 Coin</p>
-                        <button type="button" class="btn btn-warning">Buy</button>
+                        <button type="button" class="btn btn-warning" id="buy-sta-10">Buy</button>
                       </div>
 
                       @* Package 2 *@
@@ -26,9 +26,9 @@
                           <img class="position-absolute" src="~/assets/stamina.png" height="50">
                           <img class="position-absolute" src="~/assets/stamina.png" height="50">
                         </div>
-                        <p class="mb-3">+200</p>
-                        <p class="mb-3">Price: 15 Coin</p>
-                        <button type="button" class="btn btn-warning">Buy</button>
+                        <p class="mb-3">+30</p>
+                        <p class="mb-3">Price: 25 Coin</p>
+                        <button type="button" class="btn btn-warning" id="buy-sta-30">Buy</button>
                       </div>
 
                       @* Package 3 *@
@@ -38,17 +38,17 @@
                           <img class="position-absolute" src="~/assets/stamina.png" height="50">
                           <img class="position-absolute" src="~/assets/stamina.png" height="50">
                         </div>
-                        <p class="mb-3">+300</p>
-                        <p class="mb-3">Price: 20 Coin</p>
-                        <button type="button" class="btn btn-warning">Buy</button>
+                        <p class="mb-3">+50</p>
+                        <p class="mb-3">Price: 40 Coin</p>
+                        <button type="button" class="btn btn-warning" id="buy-sta-50">Buy</button>
                       </div>
                     </div>
 
                     <div class="px-4 coin-amount d-flex align-items-center justify-content-between">
-                      <h4>Coin: 480</h4>
-                      
-                      @* Error message *@
-                      <p class="text-danger">Your coin is not enough</p>
+                        <h4 id="dp-coin">Coin: 480</h4>
+
+                        @* Error message *@
+                        <p class="text-danger" id="dp-error-message"></p>
                     </div>
                 </div>
             </div>

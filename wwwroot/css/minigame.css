@@ -1,5 +1,135 @@
-﻿#snakeCanvas{
+﻿#snakeCanvas, #flappyCanvas, {
     margin: 0 auto;
     padding: 0;
     display: block;
+}
+
+
+#game2048Canvas {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
+
+.grid-2048 {
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(110, 110, 110);
+    padding: 5px;
+    background-image: url("../assets/background-2048.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.grid-2048 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-color: rgb(255, 218, 218);
+    font-size: 60px;
+    border-radius: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.grid-2048-0 {
+    background-color: rgb(255, 218, 218);
+    color: rgb(255, 218, 218);
+    opacity: 0.7;
+}
+
+.grid-2048-2 {
+    background-color: aqua !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-4 {
+    background-color: rgb(0, 124, 124) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-8 {
+    background-color: rgb(0, 255, 106) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-16 {
+    background-color: rgb(0, 89, 255) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-32 {
+    background-color: rgb(166, 255, 0) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-64 {
+    background-color: rgb(255, 166, 0) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-128 {
+    background-color: rgb(255, 81, 0) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-256 {
+    background-color: rgb(255, 0, 128) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-512 {
+    background-color: rgb(255, 0, 0) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-1024 {
+    background-color: rgb(160, 0, 0) !important;
+    color: rgb(122, 122, 255);
+}
+
+.grid-2048-2048 {
+    background-color: rgb(251, 255, 0) !important;
+    color: rgb(122, 122, 255);
+}
+
+.loseMessage-2048, .startMessage-2048 {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 50, 50);
+}
+
+.startMessage-2048{
+    display:flex
+}
+
+.gameover-2048 {
+    margin-bottom: 20px;
+}
+
+.message-2048{
+    font-size: 30px;
+}
+
+.score-2048 {
+    font-size: 30px;
 }

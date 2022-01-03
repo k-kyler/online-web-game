@@ -122,72 +122,76 @@ window.addEventListener("keyup", (e) => {
   player.moving = false;
 });
 
+let isPlayingMiniGame = false;
+
 function movePlayer(player) {
-  if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
-    player.x -= player.speed;
-    player.frameY = 1;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
-  if (
-    (keys["ArrowRight"] || keys["d"]) &&
-    player.x < canvas.width - player.width
-  ) {
-    player.x += player.speed;
-    player.frameY = 2;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
-  if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
-    player.y -= player.speed;
-    player.frameY = 3;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
-  }
-  if (
-    (keys["ArrowDown"] || keys["s"]) &&
-    player.y < canvas.height - player.height
-  ) {
-    player.y += player.speed;
-    player.frameY = 0;
-    player.moving = true;
-    fetch(`${DEV_URL}/multiplayer/update`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        player,
-        username: document.getElementById("playerInfoUsername").textContent,
-      }),
-    });
+  if (!isPlayingMiniGame) {
+    if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
+      player.x -= player.speed;
+      player.frameY = 1;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
+    if (
+      (keys["ArrowRight"] || keys["d"]) &&
+      player.x < canvas.width - player.width
+    ) {
+      player.x += player.speed;
+      player.frameY = 2;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
+    if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
+      player.y -= player.speed;
+      player.frameY = 3;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
+    if (
+      (keys["ArrowDown"] || keys["s"]) &&
+      player.y < canvas.height - player.height
+    ) {
+      player.y += player.speed;
+      player.frameY = 0;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
   }
 }
 
@@ -233,10 +237,10 @@ var redDoorBack = {
   height: 63,
 };
 var redRoomGame = {
-  x: 1,
-  y: 1,
-  width: 64,
-  height: 32,
+  x: 250,
+  y: 215,
+  width: 45,
+  height: 45,
 };
 
 // Blue door enter and get back locations
@@ -255,8 +259,8 @@ var blueDoorBack = {
 var blueRoomGame = {
   x: 700,
   y: 287,
-  width: 40,
-  height: 40,
+  width: 45,
+  height: 45,
 };
 
 // Green door enter and get back locations
@@ -273,10 +277,10 @@ var greenDoorBack = {
   height: 78,
 };
 var greenRoomGame = {
-  x: 1,
-  y: 1,
-  width: 64,
-  height: 32,
+  x: 610,
+  y: 310,
+  width: 45,
+  height: 45,
 };
 
 // Purple door enter and get back locations
@@ -396,13 +400,17 @@ function enterPortal(player) {
   y = player.y + player.height / 2;
   if (
     keys["e"] &&
-    x >= redDoorBack.x &&
-    x <= redDoorBack.x + redDoorBack.width &&
-    y >= redDoorBack.y &&
-    y <= redDoorBack.y + redDoorBack.height &&
+    x >= redRoomGame.x &&
+    x <= redRoomGame.x + redRoomGame.width &&
+    y >= redRoomGame.y &&
+    y <= redRoomGame.y + redRoomGame.height &&
     index == 3
   ) {
-    window.location.pathname = "/Game";
+    if ($("#game2048Modal").modal("hide")) {
+      $("#game2048Modal").modal("show");
+    } else if ($("#game2048Modal").modal("show")) {
+      $("#game2048Modal").modal("hide");
+    }
   }
   if (
     keys["e"] &&
@@ -420,13 +428,17 @@ function enterPortal(player) {
   }
   if (
     keys["e"] &&
-    x >= greenDoorBack.x &&
-    x <= greenDoorBack.x + greenDoorBack.width &&
-    y >= greenDoorBack.y &&
-    y <= greenDoorBack.y + greenDoorBack.height &&
+    x >= greenRoomGame.x &&
+    x <= greenRoomGame.x + greenRoomGame.width &&
+    y >= greenRoomGame.y &&
+    y <= greenRoomGame.y + greenRoomGame.height &&
     index == 2
   ) {
-    window.location.pathname = "/Game";
+    if ($("#flappyGameModal").modal("hide")) {
+      $("#flappyGameModal").modal("show");
+    } else if ($("#flappyGameModal").modal("show")) {
+      $("#flappyGameModal").modal("hide");
+    }
   }
   if (
     keys["e"] &&

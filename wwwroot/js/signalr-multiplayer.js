@@ -242,6 +242,12 @@ var redRoomGame = {
   width: 45,
   height: 45,
 };
+var redRoomGuide = {
+  x: 815,
+  y: 307,
+  width: 45,
+  height: 45,
+};
 
 // Blue door enter and get back locations
 var blueDoor = {
@@ -259,6 +265,12 @@ var blueDoorBack = {
 var blueRoomGame = {
   x: 700,
   y: 287,
+  width: 45,
+  height: 45,
+};
+var blueRoomGuide = {
+  x: 835,
+  y: 139,
   width: 45,
   height: 45,
 };
@@ -282,6 +294,12 @@ var greenRoomGame = {
   width: 45,
   height: 45,
 };
+var greenRoomGuide = {
+  x: 130,
+  y: 197,
+  width: 45,
+  height: 45,
+};
 
 // Purple door enter and get back locations
 var purpleDoor = {
@@ -299,6 +317,12 @@ var purpleDoorBack = {
 var purpleRoomGame = {
   x: 1,
   y: 1,
+  width: 64,
+  height: 32,
+};
+var purpleRoomGuide = {
+  x: 90,
+  y: 270,
   width: 64,
   height: 32,
 };
@@ -398,6 +422,8 @@ function enterPortal(player) {
 
   x = player.x + player.width / 2;
   y = player.y + player.height / 2;
+
+  // Red room
   if (
     keys["e"] &&
     x >= redRoomGame.x &&
@@ -414,6 +440,22 @@ function enterPortal(player) {
   }
   if (
     keys["e"] &&
+    x >= redRoomGuide.x &&
+    x <= redRoomGuide.x + redRoomGuide.width &&
+    y >= redRoomGuide.y &&
+    y <= redRoomGuide.y + redRoomGuide.height &&
+    index == 3
+  ) {
+    if ($("#redRoomGuideModal").modal("hide")) {
+      $("#redRoomGuideModal").modal("show");
+    } else if ($("#redRoomGuideModal").modal("show")) {
+      $("#redRoomGuideModal").modal("hide");
+    }
+  }
+
+  // Blue room
+  if (
+    keys["e"] &&
     x >= blueRoomGame.x &&
     x <= blueRoomGame.x + blueRoomGame.width &&
     y >= blueRoomGame.y &&
@@ -426,6 +468,22 @@ function enterPortal(player) {
       $("#snakeGameModal").modal("hide");
     }
   }
+  if (
+    keys["e"] &&
+    x >= blueRoomGuide.x &&
+    x <= blueRoomGuide.x + blueRoomGuide.width &&
+    y >= blueRoomGuide.y &&
+    y <= blueRoomGuide.y + blueRoomGuide.height &&
+    index == 1
+  ) {
+    if ($("#blueRoomGuideModal").modal("hide")) {
+      $("#blueRoomGuideModal").modal("show");
+    } else if ($("#blueRoomGuideModal").modal("show")) {
+      $("#blueRoomGuideModal").modal("hide");
+    }
+  }
+
+  // Green
   if (
     keys["e"] &&
     x >= greenRoomGame.x &&
@@ -442,14 +500,35 @@ function enterPortal(player) {
   }
   if (
     keys["e"] &&
-    x >= purpleDoorBack.x &&
-    x <= purpleDoorBack.x + purpleDoorBack.width &&
-    y >= purpleDoorBack.y &&
-    y <= purpleDoorBack.y + purpleDoorBack.height &&
+    x >= greenRoomGuide.x &&
+    x <= greenRoomGuide.x + greenRoomGuide.width &&
+    y >= greenRoomGuide.y &&
+    y <= greenRoomGuide.y + greenRoomGuide.height &&
+    index == 2
+  ) {
+    if ($("#greenRoomGuideModal").modal("hide")) {
+      $("#greenRoomGuideModal").modal("show");
+    } else if ($("#greenRoomGuideModal").modal("show")) {
+      $("#greenRoomGuideModal").modal("hide");
+    }
+  }
+
+  // Purple room
+  if (
+    keys["e"] &&
+    x >= purpleRoomGuide.x &&
+    x <= purpleRoomGuide.x + purpleRoomGuide.width &&
+    y >= purpleRoomGuide.y &&
+    y <= purpleRoomGuide.y + purpleRoomGuide.height &&
     index == 4
   ) {
-    window.location.pathname = "/Game";
+    if ($("#purpleRoomGuideModal").modal("hide")) {
+      $("#purpleRoomGuideModal").modal("show");
+    } else if ($("#purpleRoomGuideModal").modal("show")) {
+      $("#purpleRoomGuideModal").modal("hide");
+    }
   }
+  // Write code here...
 }
 
 // Players list to store all players drawing data

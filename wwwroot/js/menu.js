@@ -5,7 +5,7 @@ $(document).ready(() => {
     $(".modal-backdrop").css("display", "none");
   });
 
-  // Press to open Settings modal
+  // Press Esc to open settings modal
   $(document).keydown((e) => {
     if (e.keyCode == 27) {
       if ($("#myModal1").modal("hide")) {

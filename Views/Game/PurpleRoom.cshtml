@@ -13,6 +13,8 @@
     <partial name="_StorePartial" />
 
     <partial name="_LoadingPartial" />
+
+    <partial name="_PurpleRoomGuidePartial" />
     
     <div class="purpleRoom"></div>
 
@@ -20,6 +22,10 @@
         <canvas id="purple_room"></canvas>
         <img width="50" height="50" class="portal portal-purple-room" src="~/assets/portal.png" />
         <img width="40" height="40" class="task task-purple-room" src="~/assets/task.png" />
+        <div class="guide guide-purple-room" id="purpleGuide" data-toggle="tooltip" data-placement="top" title="Open guide">
+            <img width="32" height="32" src="~/assets/guide.png" />
+            <img width="32" height="48" src="~/assets/NPC_Guide.png" />
+        </div>
     </div>
 
     <audio autoplay loop id="audioSource">

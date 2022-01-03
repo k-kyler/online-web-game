@@ -21,14 +21,20 @@ PostgreSQL - 12.9
 
 **2. Run command**
 
-`dotnet run`
+```
+dotnet run
+```
 
 **3. Visit game page at**
 
-`https://localhost:5001`
+```
+https://localhost:5001
+```
 
 ## Production link
 
-`http://172.143.1.23`
+```
+http://172.143.1.23
+```
 
 ### Powered by KKL Software Team

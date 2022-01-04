@@ -15,8 +15,8 @@ Online 2D web game is a university project of I and my friends. We have used ASP
 **1. You need**
 
 ```
-Dotnet - 5.0.402
-PostgreSQL - 12.9
+Dotnet 5.0.402
+PostgreSQL 12.9
 ```
 
 **2. Run command**

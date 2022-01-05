@@ -16,7 +16,7 @@
 2. Choose **Launch instance** to start creating new instance for deploying our web game.
 3. Choose the first option **Amazon Linux 2 (or another linux version that you prefer)**
 4. You just only need to choose the **t2.micro (free tier)** then skip through all the instance next setup (because our project is simple and doesn't need it). But when you reach the **Configure Security Group** setup, you will also need to add rule for **HTTP** type with **Anywhere** source. Finally, click next and launch the instance.
-5. Create and download new **key pair** of the instance.
+5. Create and download new **key pair** of the instance (or choose an existing key pair if you have).
 6. Create an Elastic IP for the instance.
 7. Configure the **key pair** to connect and copy the web game project to the instance.
 

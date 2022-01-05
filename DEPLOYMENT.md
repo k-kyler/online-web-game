@@ -17,7 +17,8 @@
 3. Choose the first option **Amazon Linux 2 (or another linux version that you prefer)**
 4. You just only need to choose the **t2.micro (free tier)** then skip through all the instance next setup (because our project is simple and doesn't need it). But when you reach the **Configure Security Group** setup, you will also need to add rule for **HTTP** type with **Anywhere** source. Finally, click next and launch the instance.
 5. Create and download new **key pair** of the instance.
-6. Configure the **key pair** to connect and copy the web game project to the instance.
+6. Create an Elastic IP for the instance.
+7. Configure the **key pair** to connect and copy the web game project to the instance.
 
 ```
 # Give your key pair permission to read and copy the project
@@ -30,7 +31,7 @@ scp -r -i key-pair-name.pem ~/path/to/your/project/folder/from/root ec2-user@ins
 ssh -i key-pair-name.pem ec2-user@instance-ip
 ```
 
-7. Install **Docker** and **docker-compose** for the instance.
+8. Install **Docker** and **docker-compose** for the instance.
 
 ```
 sudo yum update
@@ -40,13 +41,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-8. Start **Docker**
+9. Start **Docker**
 
 ```
 sudo service docker start
 ```
 
-9. Fire up the game!
+10. Fire up the game!
 
 ```
 cd online-web-game

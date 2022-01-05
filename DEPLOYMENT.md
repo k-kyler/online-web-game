@@ -7,7 +7,8 @@
 3. Change **server port (Startup.cs)** and **client port (all JavaScript files that have fetch requests to server)** from development to production.
 4. Create a **seed script** so that you can initialize the database when you deploy.
 5. Create a **Dockerfile** for the web game.
-6. Create a **docker-compose** so that you can easily combine the web game image, the PostgresSQL image and the seed script together then deploy it.
+6. Create a **docker-compose** file so that you can easily combine the web game image, the PostgresSQL image and the seed script together then deploy it.
+7. The port of the web game image in the **docker-compose** file should be point to **80** (default port of our AWS EC2 instance web server) so that the instance can display the web game if we deploy successfully.
 
 ## AWS EC2 Setup
 
@@ -17,6 +18,18 @@
 4. You just only need to choose the **t2.micro (free tier)** then skip through all the instance next setup (because our project is simple and doesn't need it). But when you reach the **Configure Security Group** setup, you will also need to add rule for **HTTP** type with **Anywhere** source. Finally, click next and launch the instance.
 5. Create and download new **key pair** of the instance.
 6. Configure the **key pair** to connect and copy the web game project to the instance.
+
+```
+# Give your key pair permission to read and copy the project
+chmod 400 key-pair-name.pem
+
+# Copy the project to the AWS EC2 instance
+scp -r -i key-pair-name.pem ~/path/to/your/project/folder/from/root ec2-user@instance-ip:~/
+
+# Connect to the AWS EC2 instance
+ssh -i key-pair-name.pem ec2-user@instance-ip
+```
+
 7. Install **Docker** and **docker-compose** for the instance.
 
 ```
@@ -33,9 +46,11 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo service docker start
 ```
 
-9. Run the web game
+9. Fire up the game!
 
 ```
 cd online-web-game
-sudo docker-compose up
+
+# Run docker-compose in background
+sudo docker-compose up --detach
 ```

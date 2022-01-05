@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineWebGame.Data;
 using OnlineWebGame.Hubs;
+using System.Diagnostics;
 
 namespace OnlineWebGame
 {
@@ -60,7 +61,7 @@ namespace OnlineWebGame
             app.UseRouting();
 
             app.UseAuthorization();
-
+            
             app.UseSession();
 
             app.UseEndpoints(endpoints =>
@@ -71,6 +72,9 @@ namespace OnlineWebGame
                 endpoints.MapHub<ChatHub>("/hubs/chat");
                 endpoints.MapHub<MultiplayerHub>("/hubs/multiplayer");
             });
+
         }
+
+
     }
 }

@@ -320,6 +320,12 @@ var purpleRoomGame = {
   width: 64,
   height: 32,
 };
+var purpleRoomGame = {
+    x: 685,
+    y: 265,
+    width: 45,
+    height: 45,
+};
 var purpleRoomGuide = {
   x: 90,
   y: 270,
@@ -466,7 +472,7 @@ function enterPortal(player) {
       $("#snakeGameModal").modal("show");
     } else if ($("#snakeGameModal").modal("show")) {
       $("#snakeGameModal").modal("hide");
-    }
+    } 
   }
   if (
     keys["e"] &&
@@ -528,7 +534,20 @@ function enterPortal(player) {
       $("#purpleRoomGuideModal").modal("hide");
     }
   }
-  // Write code here...
+  if (
+        keys["e"] &&
+        x >= purpleRoomGame.x &&
+        x <= purpleRoomGame.x + purpleRoomGame.width &&
+        y >= purpleRoomGame.y &&
+        y <= purpleRoomGame.y + purpleRoomGame.height &&
+        index == 4
+    ) {
+        if ($("#robotGameModal").modal("hide")) {
+            $("#robotGameModal").modal("show");
+        } else if ($("#robotGameModal").modal("show")) {
+            $("#robotGameModal").modal("hide");
+        }
+  }
 }
 
 // Players list to store all players drawing data

@@ -3,7 +3,10 @@
 
 // Setup bootstrap tooltips
 $(document).ready(() => {
-  $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip();
+    getLowStaPlayers()
+
+    
 });
 
 // URLs to request
@@ -14,3 +17,19 @@ const PRO_URL = "http://localhost:8000";
 setTimeout(() => {
   document.getElementById("gameMap").style.opacity = "1";
 }, 3000);
+
+let timeCount = 0
+
+
+async function getLowStaPlayers() {
+    try {
+        const response = await fetch(`${DEV_URL}/players/lowsta`);
+        const res = await response.json()
+
+
+        console.log(res)
+    }
+    catch (err) {
+        console.log(err)
+    }
+}

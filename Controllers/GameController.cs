@@ -6,6 +6,7 @@ using OnlineWebGame.Models;
 using OnlineWebGame.ViewModels;
 using System;
 using System.Diagnostics;
+using System.Timers;
 
 namespace OnlineWebGame.Controllers
 {
@@ -122,7 +123,7 @@ namespace OnlineWebGame.Controllers
             return BadRequest(new { code = "failed"});
         }
 
-
+        
         private void SendUserInfo()
         {
             var userDAO = new UserDAO(_context);

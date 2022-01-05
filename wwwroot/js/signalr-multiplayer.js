@@ -122,78 +122,77 @@ window.addEventListener("keyup", (e) => {
   player.moving = false;
 });
 
-let isPlayingMiniGame = false
+let isPlayingMiniGame = false;
 
 function movePlayer(player) {
-    if (!isPlayingMiniGame) {
-        if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
-            player.x -= player.speed;
-            player.frameY = 1;
-            player.moving = true;
-            fetch(`${DEV_URL}/multiplayer/update`, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                method: "POST",
-                body: JSON.stringify({
-                    player,
-                    username: document.getElementById("playerInfoUsername").textContent,
-                }),
-            });
-        }
-        if (
-            (keys["ArrowRight"] || keys["d"]) &&
-            player.x < canvas.width - player.width
-        ) {
-            player.x += player.speed;
-            player.frameY = 2;
-            player.moving = true;
-            fetch(`${DEV_URL}/multiplayer/update`, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                method: "POST",
-                body: JSON.stringify({
-                    player,
-                    username: document.getElementById("playerInfoUsername").textContent,
-                }),
-            });
-        }
-        if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
-            player.y -= player.speed;
-            player.frameY = 3;
-            player.moving = true;
-            fetch(`${DEV_URL}/multiplayer/update`, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                method: "POST",
-                body: JSON.stringify({
-                    player,
-                    username: document.getElementById("playerInfoUsername").textContent,
-                }),
-            });
-        }
-        if (
-            (keys["ArrowDown"] || keys["s"]) &&
-            player.y < canvas.height - player.height
-        ) {
-            player.y += player.speed;
-            player.frameY = 0;
-            player.moving = true;
-            fetch(`${DEV_URL}/multiplayer/update`, {
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                method: "POST",
-                body: JSON.stringify({
-                    player,
-                    username: document.getElementById("playerInfoUsername").textContent,
-                }),
-            });
-        }
+  if (!isPlayingMiniGame) {
+    if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
+      player.x -= player.speed;
+      player.frameY = 1;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
     }
-  
+    if (
+      (keys["ArrowRight"] || keys["d"]) &&
+      player.x < canvas.width - player.width
+    ) {
+      player.x += player.speed;
+      player.frameY = 2;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
+    if ((keys["ArrowUp"] || keys["w"]) && player.y > 0) {
+      player.y -= player.speed;
+      player.frameY = 3;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
+    if (
+      (keys["ArrowDown"] || keys["s"]) &&
+      player.y < canvas.height - player.height
+    ) {
+      player.y += player.speed;
+      player.frameY = 0;
+      player.moving = true;
+      fetch(`${DEV_URL}/multiplayer/update`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          player,
+          username: document.getElementById("playerInfoUsername").textContent,
+        }),
+      });
+    }
+  }
 }
 
 function handlePlayerFrame(player) {
@@ -226,72 +225,96 @@ function handlePlayerFrame(player) {
 
 // Red door enter and get back locations
 var redDoor = {
-  x: 96,
-  y: 96,
+  x: 49,
+  y: 40,
   width: 32,
   height: 32,
 };
 var redDoorBack = {
-  x: 900,
-  y: 415,
+  x: 255,
+  y: 337,
   width: 59,
   height: 63,
 };
 var redRoomGame = {
-    x: 250,
-    y: 215,
-    width: 45,
-    height: 45,
+  x: 250,
+  y: 215,
+  width: 45,
+  height: 45,
+};
+var redRoomGuide = {
+  x: 815,
+  y: 307,
+  width: 45,
+  height: 45,
 };
 
 // Blue door enter and get back locations
 var blueDoor = {
-  x: 96,
-  y: 351,
+  x: 49,
+  y: 390,
   width: 32,
   height: 32,
 };
 var blueDoorBack = {
-  x: 896,
-  y: 1,
+  x: 365,
+  y: 389,
   width: 63,
   height: 32,
 };
 var blueRoomGame = {
-    x: 700,
-    y: 287,
-    width: 45,
-    height: 45,
+  x: 700,
+  y: 287,
+  width: 45,
+  height: 45,
+};
+var blueRoomGuide = {
+  x: 835,
+  y: 139,
+  width: 45,
+  height: 45,
 };
 
 // Green door enter and get back locations
 var greenDoor = {
-  x: 799,
-  y: 96,
+  x: 849,
+  y: 40,
   width: 32,
   height: 32,
 };
 var greenDoorBack = {
-  x: 1,
-  y: 400,
+  x: 770,
+  y: 377,
   width: 64,
   height: 78,
 };
 var greenRoomGame = {
-    x: 610,
-    y: 310,
-    width: 45,
-    height: 45,
+  x: 610,
+  y: 310,
+  width: 45,
+  height: 45,
+};
+var greenRoomGuide = {
+  x: 130,
+  y: 197,
+  width: 45,
+  height: 45,
 };
 
 // Purple door enter and get back locations
 var purpleDoor = {
-  x: 799,
-  y: 351,
+  x: 849,
+  y: 390,
   width: 32,
   height: 32,
 };
 var purpleDoorBack = {
+  x: 810,
+  y: 30,
+  width: 64,
+  height: 32,
+};
+var purpleRoomGame = {
   x: 1,
   y: 1,
   width: 64,
@@ -302,6 +325,12 @@ var purpleRoomGame = {
     y: 265,
     width: 45,
     height: 45,
+};
+var purpleRoomGuide = {
+  x: 90,
+  y: 270,
+  width: 64,
+  height: 32,
 };
 
 function enterDoor(player) {
@@ -357,8 +386,8 @@ function backToHallDoor(player) {
     x >= redDoorBack.x &&
     x <= redDoorBack.x + redDoorBack.width &&
     y >= redDoorBack.y &&
-      y <= redDoorBack.y + redDoorBack.height &&
-      index == 3
+    y <= redDoorBack.y + redDoorBack.height &&
+    index == 3
   ) {
     window.location.pathname = "/Game";
   }
@@ -367,8 +396,8 @@ function backToHallDoor(player) {
     x >= blueDoorBack.x &&
     x <= blueDoorBack.x + blueDoorBack.width &&
     y >= blueDoorBack.y &&
-      y <= blueDoorBack.y + blueDoorBack.height &&
-      index == 1
+    y <= blueDoorBack.y + blueDoorBack.height &&
+    index == 1
   ) {
     window.location.pathname = "/Game";
   }
@@ -377,8 +406,8 @@ function backToHallDoor(player) {
     x >= greenDoorBack.x &&
     x <= greenDoorBack.x + greenDoorBack.width &&
     y >= greenDoorBack.y &&
-      y <= greenDoorBack.y + greenDoorBack.height &&
-      index == 2
+    y <= greenDoorBack.y + greenDoorBack.height &&
+    index == 2
   ) {
     window.location.pathname = "/Game";
   }
@@ -387,61 +416,125 @@ function backToHallDoor(player) {
     x >= purpleDoorBack.x &&
     x <= purpleDoorBack.x + purpleDoorBack.width &&
     y >= purpleDoorBack.y &&
-      y <= purpleDoorBack.y + purpleDoorBack.height &&
-      index == 4
+    y <= purpleDoorBack.y + purpleDoorBack.height &&
+    index == 4
   ) {
     window.location.pathname = "/Game";
   }
 }
 
 function enterPortal(player) {
-    let x, y;
+  let x, y;
 
-    x = player.x + player.width / 2;
-    y = player.y + player.height / 2;
-    if (
-        keys["e"] &&
-        x >= redRoomGame.x &&
-        x <= redRoomGame.x + redRoomGame.width &&
-        y >= redRoomGame.y &&
-        y <= redRoomGame.y + redRoomGame.height &&
-        index == 3
-    ) {
-        if ($("#game2048Modal").modal("hide")) {
-            $("#game2048Modal").modal("show");
-        } else if ($("#game2048Modal").modal("show")) {
-            $("#game2048Modal").modal("hide");
-        }
+  x = player.x + player.width / 2;
+  y = player.y + player.height / 2;
+
+  // Red room
+  if (
+    keys["e"] &&
+    x >= redRoomGame.x &&
+    x <= redRoomGame.x + redRoomGame.width &&
+    y >= redRoomGame.y &&
+    y <= redRoomGame.y + redRoomGame.height &&
+    index == 3
+  ) {
+    if ($("#game2048Modal").modal("hide")) {
+      $("#game2048Modal").modal("show");
+    } else if ($("#game2048Modal").modal("show")) {
+      $("#game2048Modal").modal("hide");
     }
-    if (
-        keys["e"] &&
-        x >= blueRoomGame.x &&
-        x <= blueRoomGame.x + blueRoomGame.width &&
-        y >= blueRoomGame.y &&
-        y <= blueRoomGame.y + blueRoomGame.height &&
-        index == 1
-    ) {
-        if ($("#snakeGameModal").modal("hide")) {
-            $("#snakeGameModal").modal("show");
-        } else if ($("#snakeGameModal").modal("show")) {
-            $("#snakeGameModal").modal("hide");
-        }
+  }
+  if (
+    keys["e"] &&
+    x >= redRoomGuide.x &&
+    x <= redRoomGuide.x + redRoomGuide.width &&
+    y >= redRoomGuide.y &&
+    y <= redRoomGuide.y + redRoomGuide.height &&
+    index == 3
+  ) {
+    if ($("#redRoomGuideModal").modal("hide")) {
+      $("#redRoomGuideModal").modal("show");
+    } else if ($("#redRoomGuideModal").modal("show")) {
+      $("#redRoomGuideModal").modal("hide");
     }
-    if (
-        keys["e"] &&
-        x >= greenRoomGame.x &&
-        x <= greenRoomGame.x + greenRoomGame.width &&
-        y >= greenRoomGame.y &&
-        y <= greenRoomGame.y + greenRoomGame.height &&
-        index == 2
-    ) {
-        if ($("#flappyGameModal").modal("hide")) {
-            $("#flappyGameModal").modal("show");
-        } else if ($("#flappyGameModal").modal("show")) {
-            $("#flappyGameModal").modal("hide");
-        }
+  }
+
+  // Blue room
+  if (
+    keys["e"] &&
+    x >= blueRoomGame.x &&
+    x <= blueRoomGame.x + blueRoomGame.width &&
+    y >= blueRoomGame.y &&
+    y <= blueRoomGame.y + blueRoomGame.height &&
+    index == 1
+  ) {
+    if ($("#snakeGameModal").modal("hide")) {
+      $("#snakeGameModal").modal("show");
+    } else if ($("#snakeGameModal").modal("show")) {
+      $("#snakeGameModal").modal("hide");
+    } 
+  }
+  if (
+    keys["e"] &&
+    x >= blueRoomGuide.x &&
+    x <= blueRoomGuide.x + blueRoomGuide.width &&
+    y >= blueRoomGuide.y &&
+    y <= blueRoomGuide.y + blueRoomGuide.height &&
+    index == 1
+  ) {
+    if ($("#blueRoomGuideModal").modal("hide")) {
+      $("#blueRoomGuideModal").modal("show");
+    } else if ($("#blueRoomGuideModal").modal("show")) {
+      $("#blueRoomGuideModal").modal("hide");
     }
-    if (
+  }
+
+  // Green
+  if (
+    keys["e"] &&
+    x >= greenRoomGame.x &&
+    x <= greenRoomGame.x + greenRoomGame.width &&
+    y >= greenRoomGame.y &&
+    y <= greenRoomGame.y + greenRoomGame.height &&
+    index == 2
+  ) {
+    if ($("#flappyGameModal").modal("hide")) {
+      $("#flappyGameModal").modal("show");
+    } else if ($("#flappyGameModal").modal("show")) {
+      $("#flappyGameModal").modal("hide");
+    }
+  }
+  if (
+    keys["e"] &&
+    x >= greenRoomGuide.x &&
+    x <= greenRoomGuide.x + greenRoomGuide.width &&
+    y >= greenRoomGuide.y &&
+    y <= greenRoomGuide.y + greenRoomGuide.height &&
+    index == 2
+  ) {
+    if ($("#greenRoomGuideModal").modal("hide")) {
+      $("#greenRoomGuideModal").modal("show");
+    } else if ($("#greenRoomGuideModal").modal("show")) {
+      $("#greenRoomGuideModal").modal("hide");
+    }
+  }
+
+  // Purple room
+  if (
+    keys["e"] &&
+    x >= purpleRoomGuide.x &&
+    x <= purpleRoomGuide.x + purpleRoomGuide.width &&
+    y >= purpleRoomGuide.y &&
+    y <= purpleRoomGuide.y + purpleRoomGuide.height &&
+    index == 4
+  ) {
+    if ($("#purpleRoomGuideModal").modal("hide")) {
+      $("#purpleRoomGuideModal").modal("show");
+    } else if ($("#purpleRoomGuideModal").modal("show")) {
+      $("#purpleRoomGuideModal").modal("hide");
+    }
+  }
+  if (
         keys["e"] &&
         x >= purpleRoomGame.x &&
         x <= purpleRoomGame.x + purpleRoomGame.width &&
@@ -454,7 +547,7 @@ function enterPortal(player) {
         } else if ($("#robotGameModal").modal("show")) {
             $("#robotGameModal").modal("hide");
         }
-    }
+  }
 }
 
 // Players list to store all players drawing data
@@ -479,8 +572,6 @@ function startAnimating(fps) {
   startTime = then;
   animate();
 }
-
-
 
 function animate() {
   requestAnimationFrame(animate);
@@ -548,13 +639,13 @@ function animate() {
         document.getElementById("playerInfoUsername").textContent
       ) {
         movePlayer(player.player);
-          handlePlayerFrame(player.player);
-          if (index == 0) {
-              enterDoor(player.player);
-          }
-        
-          backToHallDoor(player.player);
-          enterPortal(player.player);
+        handlePlayerFrame(player.player);
+        if (index == 0) {
+          enterDoor(player.player);
+        }
+
+        backToHallDoor(player.player);
+        enterPortal(player.player);
       }
     }
   }
@@ -620,8 +711,8 @@ signalRMultiplayerConnection.on("UpdatePositions", (updatedPlayers) => {
 $(document).ready(() => {
   // Function to render active players on list
   function renderActivePlayers(activePlayers) {
-    // Add all active players to the current player info modal
     $("#activePlayersList").html("");
+    activePlayers = activePlayers.sort((a, b) => a.level > b.level && -1);
 
     for (let activePlayer of activePlayers) {
       $("#activePlayersList").append(`

@@ -115,6 +115,39 @@
   bottom: 9rem;
 }
 
+.guide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.guide > img:first-child {
+  animation: scale 1s linear infinite alternate;
+  margin-bottom: 0.5rem;
+}
+
+.guide-blue-room {
+  right: 4rem;
+  top: 6rem;
+}
+
+.guide-green-room {
+  left: 8rem;
+  bottom: 15rem;
+}
+
+.guide-red-room {
+  right: 5rem;
+  bottom: 8rem;
+}
+
+.guide-purple-room {
+  left: 6rem;
+  bottom: 10.5rem;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(-1.5rem);
@@ -127,5 +160,11 @@
 @keyframes flip {
   to {
     transform: rotateY(180deg);
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scale(1.2);
   }
 }

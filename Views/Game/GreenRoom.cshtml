@@ -16,12 +16,18 @@
 
     <partial name="_FlappyPartial" />
 
+    <partial name="_GreenRoomGuidePartial" />
+
     <div class="greenRoom"></div>
 
     <div class="game-map" id="gameMap">
         <canvas id="green_room"></canvas>
         <img width="50" height="50" class="portal portal-green-room" src="~/assets/portal.png" />
         <img width="40" height="40" class="task task-green-room" src="~/assets/task.png" />
+        <div class="guide guide-green-room" id="greenGuide" data-toggle="tooltip" data-placement="top" title="Open guide">
+            <img width="32" height="32" src="~/assets/guide.png" />
+            <img width="32" height="48" src="~/assets/NPC_Guide.png" />
+        </div>
     </div>
 
     <audio autoplay loop id="audioSource">

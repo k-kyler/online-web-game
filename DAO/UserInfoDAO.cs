@@ -2,6 +2,7 @@
 using OnlineWebGame.Models;
 using OnlineWebGame.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace OnlineWebGame.DAO
@@ -39,6 +40,11 @@ namespace OnlineWebGame.DAO
             existingUser.Exp = user.Exp;
             existingUser.Level = user.Level;
             _db.SaveChanges();
+        }
+
+        public List<UserInfo> getLowStaPlayers()
+        {
+            return _db.UserInfos.Where(u => u.Stamina < 100).ToList();
         }
     }
 }

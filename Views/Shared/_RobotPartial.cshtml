@@ -1,0 +1,37 @@
+﻿<div class="modal fade" id="robotGameModal" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-custom">
+        <div class="modal-content">
+            <div class="modal-header align-items-center justify-content-center" style="border-bottom: none;">
+                <h5 class="modal-title">Robot Game</h5>
+                <button type="button" class="close position-absolute" style="right: 1rem; outline: none;" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div id="robotGameCanvas">
+                        <div class="robot-world" data-world>
+                            <img src="~/assets/robot-background.jpg" class="robot-background">
+                            <div class="score" data-score>0</div>
+                            <img src="~/assets/robot-ground.png" class="robot-ground" data-ground>
+                            <img src="~/assets/robot-ground.png" class="robot-ground" data-ground>
+                            <img src="~/assets/robot-idle.png" class="robot" data-robot>
+
+                            <div class="startMessage-robot">
+                                <div class="gameover-robot">Get Ready</div>
+                            </div>
+
+                            <div class="loseMessage-robot">
+                                <div class="gameover-robot">Game Over</div>
+                                <div class="score-robot">Score: 0</div>
+                                <div class="score-robot">Best Score: 0</div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/robotGame.js"></script>

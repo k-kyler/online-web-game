@@ -298,10 +298,10 @@ var purpleDoorBack = {
   height: 32,
 };
 var purpleRoomGame = {
-    x: 1,
-    y: 1,
-    width: 64,
-    height: 32,
+    x: 685,
+    y: 265,
+    width: 45,
+    height: 45,
 };
 
 function enterDoor(player) {
@@ -443,13 +443,17 @@ function enterPortal(player) {
     }
     if (
         keys["e"] &&
-        x >= purpleDoorBack.x &&
-        x <= purpleDoorBack.x + purpleDoorBack.width &&
-        y >= purpleDoorBack.y &&
-        y <= purpleDoorBack.y + purpleDoorBack.height &&
+        x >= purpleRoomGame.x &&
+        x <= purpleRoomGame.x + purpleRoomGame.width &&
+        y >= purpleRoomGame.y &&
+        y <= purpleRoomGame.y + purpleRoomGame.height &&
         index == 4
     ) {
-        window.location.pathname = "/Game";
+        if ($("#robotGameModal").modal("hide")) {
+            $("#robotGameModal").modal("show");
+        } else if ($("#robotGameModal").modal("show")) {
+            $("#robotGameModal").modal("hide");
+        }
     }
 }
 

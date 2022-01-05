@@ -67,7 +67,7 @@
                     console.log("You don't have enough stamina")
                     break
                 }
-                
+                document.addEventListener("keydown", keyPress)
                 gameState.current = gameState.playing
                 game = setInterval(draw, 100)
                 break
@@ -196,6 +196,7 @@
 
         if (collision(newHead, snake)) {
             gameState.current = gameState.over
+            document.removeEventListener("keydown", keyPress)
             clearInterval(game)
             snakeCtx.fillStyle = "#70c5ce"
             snakeCtx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height)
@@ -258,7 +259,6 @@
         snakeCtx.drawImage(img, x, y, width, height)
     }
 
-    document.addEventListener("keydown", keyPress)
     let direction
     function keyPress(e) {
         if (e.keyCode === 65 && direction != "RIGHT") {

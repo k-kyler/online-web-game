@@ -23,6 +23,14 @@ namespace OnlineWebGame.Models
         [Required]
         public int Coin { get; set; }
 
+        public int BestScore2048 { get; set; }
+
+        public int BestScoreFlappy { get; set; }
+
+        public int BestScoreRobot { get; set; }
+
+        public int BestScoreSnake { get; set; }
+
         public bool Gender { get; set; }
 
         [Required]

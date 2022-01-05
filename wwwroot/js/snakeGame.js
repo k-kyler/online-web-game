@@ -17,6 +17,7 @@
     let level = 0
     let exp = 0
     let coin = 0
+    let bestScore = 0
     async function getUserInfo() {
         try {
             const response = await fetch(`${DEV_URL}/userinfo`);
@@ -28,6 +29,7 @@
             level = res.level
             exp = res.exp
             coin = res.coin
+            bestScore = res.bestScoreSnake
         }
         catch (err) {
             console.log(err)
@@ -48,6 +50,25 @@
                     Level: level,
                     Exp: exp,
                     Coin: coin
+                }),
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    async function setBestScore() {
+        try {
+            await fetch(`${DEV_URL}/userinfo/bestscore`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    UserInfoId: userInfoId,
+                    BestScore: score,
+                    Game: "snake"
                 }),
             })
         }
@@ -218,12 +239,18 @@
             snakeCtx.font = "50px Arial"
             snakeCtx.fillText("Score: " + score, 5 * box, 8 * box)
 
-            if (localStorage.getItem("score") < score) {
-                localStorage.setItem("score", score)
+            if (score > bestScore) {
+                $('#dp-bestscore-snake').html(score)
+                setBestScore()
+                snakeCtx.fillStyle = "white"
+                snakeCtx.font = "50px Arial"
+                snakeCtx.fillText("Best Score: " + score, 5 * box, 10 * box)
             }
-            snakeCtx.fillStyle = "white"
-            snakeCtx.font = "50px Arial"
-            snakeCtx.fillText("Best Score: " + localStorage.getItem("bestScoreSnake"), 5 * box, 10 * box)
+            else {
+                snakeCtx.fillStyle = "white"
+                snakeCtx.font = "50px Arial"
+                snakeCtx.fillText("Best Score: " + bestScore, 5 * box, 10 * box)
+            }
         }
         snake.unshift(newHead)
 

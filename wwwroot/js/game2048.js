@@ -13,13 +13,13 @@
     let checkUp = false
     let checkDown = false
     let score = 0
-    let bestScore = localStorage.getItem('bestScore2048')
 
     let userInfoId = ""
     let stamina = 0
     let level = 0
     let exp = 0
     let coin = 0
+    let bestScore = 0
     async function getUserInfo() {
         try {
             const response = await fetch(`${DEV_URL}/userinfo`);
@@ -31,7 +31,8 @@
             level = res.level
             exp = res.exp
             coin = res.coin
-            console.log(stamina)
+            bestScore = res.bestScore2048
+            console.log(bestScore)
         }
         catch (err) {
             console.log(err)
@@ -53,6 +54,25 @@
                     Level: level,
                     Exp: exp,
                     Coin: coin
+                }),
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    async function setBestScore() {
+        try {
+            await fetch(`${DEV_URL}/userinfo/bestscore`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    UserInfoId: userInfoId,
+                    BestScore: score,
+                    Game: "2048"
                 }),
             })
         }
@@ -135,12 +155,19 @@
         if (checkLeft && checkDown && checkRight && checkUp) {
             restartGame()
 
+            document.removeEventListener('keyup', keyPress)
+
             loseMessage.setAttribute('style', 'display: flex')
             if (score > bestScore) {
-                localStorage.setItem('bestScore2048', score)
+                $('#dp-bestscore-2048').html(score)
+                setBestScore()
+                scoreDisplay[0].innerHTML = 'Score: ' + score
+                scoreDisplay[1].innerHTML = 'Best Score: ' + score
             }
-            scoreDisplay[0].innerHTML = 'Score: ' + score
-            scoreDisplay[1].innerHTML = 'Best Score: ' + localStorage.getItem('bestScore2048')
+            else {
+                scoreDisplay[0].innerHTML = 'Score: ' + score
+                scoreDisplay[1].innerHTML = 'Best Score: ' + bestScore
+            }
             gameState.current = gameState.over
         }
     }
@@ -182,6 +209,7 @@
                     createBoard()
                     generateNew2()
                     generateNew2()
+                    document.addEventListener('keyup', keyPress)
                 }
                 else {
                     console.log("You don't have enough stamina")
@@ -210,8 +238,6 @@
                 break
         }
     })
-
-    document.addEventListener('keyup', keyPress)
 
     function keyPress(e) {
         if (e.keyCode === 65) {

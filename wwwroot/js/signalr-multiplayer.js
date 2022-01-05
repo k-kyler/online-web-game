@@ -52,7 +52,8 @@ if (index == 0) {
     frameX: 0,
     frameY: 0,
     speed: 10,
-    moving: false,
+      moving: false,
+      isPlayingMiniGame: false,
   };
 } else if (index == 1) {
   player = {
@@ -63,7 +64,8 @@ if (index == 0) {
     frameX: 0,
     frameY: 0,
     speed: 10,
-    moving: false,
+      moving: false,
+      isPlayingMiniGame: false,
   };
 } else if (index == 2) {
   player = {
@@ -74,7 +76,8 @@ if (index == 0) {
     frameX: 0,
     frameY: 0,
     speed: 10,
-    moving: false,
+      moving: false,
+      isPlayingMiniGame: false,
   };
 } else if (index == 3) {
   player = {
@@ -85,7 +88,8 @@ if (index == 0) {
     frameX: 0,
     frameY: 0,
     speed: 10,
-    moving: false,
+      moving: false,
+      isPlayingMiniGame: false,
   };
 } else if (index == 4) {
   player = {
@@ -96,7 +100,8 @@ if (index == 0) {
     frameX: 0,
     frameY: 0,
     speed: 10,
-    moving: false,
+      moving: false,
+      isPlayingMiniGame: false,
   };
 }
 
@@ -122,10 +127,9 @@ window.addEventListener("keyup", (e) => {
   player.moving = false;
 });
 
-let isPlayingMiniGame = false;
-
 function movePlayer(player) {
-  if (!isPlayingMiniGame) {
+    if (!player.isPlayingMiniGame) {
+       
     if ((keys["ArrowLeft"] || keys["a"]) && player.x > 0) {
       player.x -= player.speed;
       player.frameY = 1;
@@ -439,9 +443,11 @@ function enterPortal(player) {
     index == 3
   ) {
     if ($("#game2048Modal").modal("hide")) {
-      $("#game2048Modal").modal("show");
+        $("#game2048Modal").modal("show");
+        player.isPlayingMiniGame = true
     } else if ($("#game2048Modal").modal("show")) {
-      $("#game2048Modal").modal("hide");
+        $("#game2048Modal").modal("hide");
+        player.isPlayingMiniGame = false
     }
   }
   if (
@@ -453,9 +459,10 @@ function enterPortal(player) {
     index == 3
   ) {
     if ($("#redRoomGuideModal").modal("hide")) {
-      $("#redRoomGuideModal").modal("show");
+        $("#redRoomGuideModal").modal("show");
     } else if ($("#redRoomGuideModal").modal("show")) {
-      $("#redRoomGuideModal").modal("hide");
+        $("#redRoomGuideModal").modal("hide");
+
     }
   }
 

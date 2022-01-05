@@ -42,6 +42,37 @@ namespace OnlineWebGame.DAO
             _db.SaveChanges();
         }
 
+        public void updateBestScore(UpdateBestScoreViewModel user, Guid userInfoId)
+        {
+            var existingUser = _db.UserInfos.FirstOrDefault(u => u.UserInfoId == userInfoId);
+
+            if (existingUser is null)
+            {
+                throw new NullReferenceException();
+            }
+            if(user.Game.Equals("2048"))
+            {
+                existingUser.BestScore2048 = user.BestScore;
+                _db.SaveChanges();
+            }
+            if (user.Game.Equals("flappy"))
+            {
+                existingUser.BestScoreFlappy = user.BestScore;
+                _db.SaveChanges();
+            }
+            if (user.Game.Equals("robot"))
+            {
+                existingUser.BestScoreRobot = user.BestScore;
+                _db.SaveChanges();
+            }
+            if (user.Game.Equals("snake"))
+            {
+                existingUser.BestScoreSnake = user.BestScore;
+                _db.SaveChanges();
+            }
+            
+        }
+
         public List<UserInfo> getLowStaPlayers()
         {
             return _db.UserInfos.Where(u => u.Stamina < 100).ToList();

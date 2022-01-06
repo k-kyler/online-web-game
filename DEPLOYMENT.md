@@ -3,7 +3,7 @@
 ## Project preparation
 
 1. A copy version of our web game project and remove its packages.
-2. Configure the web builder in **Program.cs** to expose the web game in port 8000 for production.
+2. Configure the web builder in **Program.cs** to expose the web game in port 80 for production.
 3. Change **server port (Startup.cs)** and **client port (all JavaScript files that have fetch requests to server)** from development to production.
 4. Create a **seed script** so that you can initialize the database when you deploy.
 5. Create a **Dockerfile** for the web game.

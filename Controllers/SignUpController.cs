@@ -52,7 +52,7 @@ namespace OnlineWebGame.Controllers
                 Exp = 0,
                 Level = 1,
                 Stamina = 100,
-                Coin = 0,
+                Coin = 100,
                 User = user,
             };
             

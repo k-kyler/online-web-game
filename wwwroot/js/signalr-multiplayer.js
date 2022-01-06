@@ -322,16 +322,10 @@ var purpleDoorBack = {
   height: 32,
 };
 var purpleRoomGame = {
-  x: 1,
-  y: 1,
-  width: 64,
-  height: 32,
-};
-var purpleRoomGame = {
-    x: 685,
-    y: 265,
-    width: 45,
-    height: 45,
+  x: 685,
+  y: 265,
+  width: 45,
+  height: 45,
 };
 var purpleRoomGuide = {
   x: 90,

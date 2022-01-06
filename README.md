@@ -19,13 +19,19 @@ Dotnet 5.0.402
 PostgreSQL 12.9
 ```
 
-**2. Run command**
+**2. Update database**
+
+```
+dotnet ef database update
+```
+
+**3. Run command**
 
 ```
 dotnet run
 ```
 
-**3. Visit game page at**
+**4. Visit game page at**
 
 ```
 https://localhost:5001

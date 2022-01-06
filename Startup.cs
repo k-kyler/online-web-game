@@ -40,7 +40,7 @@ namespace OnlineWebGame
 
             services.AddControllersWithViews();
 
-            services.AddHostedService<TimedHostedService>();
+            services.AddHostedService<AutoUpdateStamina>();
 
         }
 

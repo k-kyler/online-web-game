@@ -159,7 +159,7 @@ namespace OnlineWebGame.Controllers
 
             var exp = userInfo.Exp % 1000;
             var expPercent = (int)Math.Round((double)(100 * exp) / 1000);
-
+            
             ViewBag.username = user.Username;
             ViewBag.exp = expPercent;
             ViewBag.coin = userInfo.Coin;

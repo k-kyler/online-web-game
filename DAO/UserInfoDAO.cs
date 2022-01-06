@@ -42,6 +42,18 @@ namespace OnlineWebGame.DAO
             _db.SaveChanges();
         }
 
+        public void updateUserSta(UserInfo user)
+        {
+            var existingUser = _db.UserInfos.FirstOrDefault(u => u.UserInfoId == user.UserInfoId);
+
+            if (existingUser is null)
+            {
+                throw new NullReferenceException();
+            }
+            existingUser.Stamina = user.Stamina;
+            _db.SaveChanges();
+        }
+
         public void updateBestScore(UpdateBestScoreViewModel user, Guid userInfoId)
         {
             var existingUser = _db.UserInfos.FirstOrDefault(u => u.UserInfoId == userInfoId);

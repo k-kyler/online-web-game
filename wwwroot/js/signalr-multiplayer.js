@@ -117,15 +117,18 @@ if (params.get("gd") == "male") {
 }
 
 // Configure player movements (using W-A-S-D keys or arrow keys)
-window.addEventListener("keydown", (e) => {
-  keys[e.key] = true;
-  player.moving = true;
-});
+//window.addEventListener("keydown", movingKeyDown);
 
-window.addEventListener("keyup", (e) => {
-  delete keys[e.key];
-  player.moving = false;
-});
+window.addEventListener("keyup", movingKeyUp);
+
+function movingKeyDown(e) {
+    keys[e.key] = true;
+    player.moving = true;
+}
+function movingKeyUp(e) {
+    delete keys[e.key];
+    player.moving = false;
+}
 
 function movePlayer(player) {
     if (!player.isPlayingMiniGame) {
@@ -421,7 +424,24 @@ function backToHallDoor(player) {
   }
 }
 
+
 function enterPortal(player) {
+    if (index == 0) {
+        window.addEventListener("keydown", movingKeyDown)
+    }
+    if (!$("#game2048Modal").hasClass('show') && index == 3) {
+        window.addEventListener("keydown", movingKeyDown)
+    }
+    if (!$("#robotGameModal").hasClass('show') && index == 4) {
+        window.addEventListener("keydown", movingKeyDown)
+    }
+    if (!$("#snakeGameModal").hasClass('show') && index == 1) {
+        window.addEventListener("keydown", movingKeyDown)
+    }
+    if (!$("#flappyGameModal").hasClass('show') && index == 2) {
+        window.addEventListener("keydown", movingKeyDown)
+    }
+
   let x, y;
 
   x = player.x + player.width / 2;
@@ -436,12 +456,12 @@ function enterPortal(player) {
     y <= redRoomGame.y + redRoomGame.height &&
     index == 3
   ) {
-    if ($("#game2048Modal").modal("hide")) {
+      if ($("#game2048Modal").modal("hide")) {
+          window.removeEventListener("keydown", movingKeyDown)
         $("#game2048Modal").modal("show");
-        player.isPlayingMiniGame = true
     } else if ($("#game2048Modal").modal("show")) {
-        $("#game2048Modal").modal("hide");
-        player.isPlayingMiniGame = false
+          $("#game2048Modal").modal("hide");
+          window.addEventListener("keydown", movingKeyDown)
     }
   }
   if (
@@ -469,11 +489,13 @@ function enterPortal(player) {
     y <= blueRoomGame.y + blueRoomGame.height &&
     index == 1
   ) {
-    if ($("#snakeGameModal").modal("hide")) {
+      if ($("#snakeGameModal").modal("hide")) {
+          window.removeEventListener("keydown", movingKeyDown)
       $("#snakeGameModal").modal("show");
     } else if ($("#snakeGameModal").modal("show")) {
-      $("#snakeGameModal").modal("hide");
-    }
+          $("#snakeGameModal").modal("hide");
+          window.addEventListener("keydown", movingKeyDown)
+    } 
   }
   if (
     keys["e"] &&
@@ -499,10 +521,12 @@ function enterPortal(player) {
     y <= greenRoomGame.y + greenRoomGame.height &&
     index == 2
   ) {
-    if ($("#flappyGameModal").modal("hide")) {
+      if ($("#flappyGameModal").modal("hide")) {
+          window.removeEventListener("keydown", movingKeyDown)
       $("#flappyGameModal").modal("show");
     } else if ($("#flappyGameModal").modal("show")) {
-      $("#flappyGameModal").modal("hide");
+          $("#flappyGameModal").modal("hide");
+          window.addEventListener("keydown", movingKeyDown)
     }
   }
   if (
@@ -518,8 +542,7 @@ function enterPortal(player) {
     } else if ($("#greenRoomGuideModal").modal("show")) {
       $("#greenRoomGuideModal").modal("hide");
     }
-  }
-
+    }
   // Purple room
   if (
     keys["e"] &&
@@ -529,25 +552,27 @@ function enterPortal(player) {
     y <= purpleRoomGuide.y + purpleRoomGuide.height &&
     index == 4
   ) {
-    if ($("#purpleRoomGuideModal").modal("hide")) {
-      $("#purpleRoomGuideModal").modal("show");
-    } else if ($("#purpleRoomGuideModal").modal("show")) {
-      $("#purpleRoomGuideModal").modal("hide");
+      if ($("#purpleRoomGuideModal").modal("hide")) {
+        $("#purpleRoomGuideModal").modal("show");
+      } else if ($("#purpleRoomGuideModal").modal("show")) {
+        $("#purpleRoomGuideModal").modal("hide");
     }
   }
   if (
-    keys["e"] &&
-    x >= purpleRoomGame.x &&
-    x <= purpleRoomGame.x + purpleRoomGame.width &&
-    y >= purpleRoomGame.y &&
-    y <= purpleRoomGame.y + purpleRoomGame.height &&
-    index == 4
-  ) {
-    if ($("#robotGameModal").modal("hide")) {
-      $("#robotGameModal").modal("show");
-    } else if ($("#robotGameModal").modal("show")) {
-      $("#robotGameModal").modal("hide");
-    }
+        keys["e"] &&
+        x >= purpleRoomGame.x &&
+        x <= purpleRoomGame.x + purpleRoomGame.width &&
+        y >= purpleRoomGame.y &&
+        y <= purpleRoomGame.y + purpleRoomGame.height &&
+        index == 4
+    ) {
+      if ($("#robotGameModal").modal("hide")) {
+          window.removeEventListener("keydown", movingKeyDown)
+            $("#robotGameModal").modal("show");
+        } else if ($("#robotGameModal").modal("show")) {
+          $("#robotGameModal").modal("hide");
+          window.addEventListener("keydown", movingKeyDown)
+        }
   }
 }
 

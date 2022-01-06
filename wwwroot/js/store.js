@@ -47,7 +47,9 @@ $(document).ready(() => {
   // Open stamina store modal
     $("#storeTrigger").click(() => {
         getUserInfo()
-        $('#dp-coin').html("Coin: " + coin)
+        setTimeout(() => $('#dp-coin').html("Coin: " + coin), 100)
+        
+        
         $("#storeModal").modal("show");
   });
 
@@ -56,7 +58,7 @@ $(document).ready(() => {
     if (event.key === "b") {
         if ($("#storeModal").modal("hide")) {
             getUserInfo()
-            $('#dp-coin').html("Coin: " + coin)
+            setTimeout(() => $('#dp-coin').html("Coin: " + coin), 100)
             $("#storeModal").modal("show");
       } else if ($("#storeModal").modal("show")) {
         $("#storeModal").modal("hide");

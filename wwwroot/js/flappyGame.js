@@ -9,6 +9,7 @@
     let level = 0
     let exp = 0
     let coin = 0
+    let bestScore = 0
     async function getUserInfo() {
         try {
             const response = await fetch(`${DEV_URL}/userinfo`);
@@ -20,7 +21,7 @@
             level = res.level
             exp = res.exp
             coin = res.coin
-
+            bestScore = res.bestScoreFlappy
         }
         catch (err) {
             console.log(err)
@@ -49,13 +50,37 @@
         }
     }
 
+    async function setBestScore() {
+        try {
+            await fetch(`${DEV_URL}/userinfo/bestscore`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    UserInfoId: userInfoId,
+                    BestScore: score.value,
+                    Game: "flappy"
+                }),
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     function restartGame() {
         coin += score.value
         exp += (score.value * 2)
         level = Math.ceil(exp / 1000)
 
         setUserInfo()
+        if (score.value > bestScore) {
+            setBestScore()
+            $('#dp-bestscore-flappy').html(score.value)
 
+        }
+        
         $('#playerLevel').html(level)
         $('#dp-stamina').html(stamina + "%")
         $('#dp-stamina-progress').css("width", stamina + "%")
@@ -257,9 +282,6 @@
                 if (pos.x + this.w <= 0) {
                     this.position.shift()
                     score.value += 1
-
-                    score.best = Math.max(score.value, score.best)
-                    localStorage.setItem("bestScoreFlappy", score.best)
                 }
             }
         },
@@ -335,7 +357,6 @@
 
     //Score
     const score = {
-        best: parseInt(localStorage.getItem("best")) || 0,
         value: 0,
 
         draw: function () {
@@ -349,11 +370,17 @@
 
             }
             else if (flappyGameState.current == flappyGameState.over) {
-                flappyCtx.font = "20px Arial"
-                flappyCtx.fillText(this.value, 220, 170)
-
-
-                flappyCtx.fillText(this.best, 220, 200)
+                if (this.value > bestScore) {
+                    flappyCtx.font = "20px Arial"
+                    flappyCtx.fillText(this.value, 220, 170)
+                    flappyCtx.fillText(this.value, 220, 200)
+                }
+                else {
+                    flappyCtx.font = "20px Arial"
+                    flappyCtx.fillText(this.value, 220, 170)
+                    flappyCtx.fillText(bestScore, 220, 200)
+                }
+                
 
             }
         },

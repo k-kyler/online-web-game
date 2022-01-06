@@ -18,18 +18,3 @@ setTimeout(() => {
   document.getElementById("gameMap").style.opacity = "1";
 }, 3000);
 
-let timeCount = 0
-
-
-async function getLowStaPlayers() {
-    try {
-        const response = await fetch(`${DEV_URL}/players/lowsta`);
-        const res = await response.json()
-
-
-        console.log(res)
-    }
-    catch (err) {
-        console.log(err)
-    }
-}

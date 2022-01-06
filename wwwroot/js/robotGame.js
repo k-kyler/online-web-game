@@ -9,7 +9,7 @@
     const scoreRobot = document.getElementsByClassName("score-robot")
 
     let lastTime
-    let bestScore = localStorage.getItem('bestScoreRobot')
+    let bestScore = 0
 
     const gameState = {
         current: 0,
@@ -34,6 +34,7 @@
             level = res.level
             exp = res.exp
             coin = res.coin
+            bestScore = res.bestScoreRobot
         }
         catch (err) {
             console.log(err)
@@ -63,6 +64,24 @@
         }
     }
 
+    async function setBestScore() {
+        try {
+            await fetch(`${DEV_URL}/userinfo/bestscore`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    UserInfoId: userInfoId,
+                    BestScore: Math.floor(score.value),
+                    Game: "robot"
+                }),
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 
     robotGame.addEventListener("click", e => {
         switch (gameState.current) {
@@ -288,11 +307,17 @@
 
         restartGame()
 
-        if (score.value > bestScore) {
-            localStorage.setItem('bestScoreRobot', Math.floor(score.value))
+        if (Math.floor(score.value) > bestScore) {
+            $('#dp-bestscore-robot').html(Math.floor(score.value))
+            setBestScore()
+            scoreRobot[0].innerHTML = "Score: " + Math.floor(score.value)
+            scoreRobot[1].innerHTML = "Best Score: " + Math.floor(score.value)
         }
-        scoreRobot[0].innerHTML = "Score: " + Math.floor(score.value)
-        scoreRobot[1].innerHTML = "Best Score: " + localStorage.getItem('bestScoreRobot')
+        else {
+            scoreRobot[0].innerHTML = "Score: " + Math.floor(score.value)
+            scoreRobot[1].innerHTML = "Best Score: " + bestScore
+        }
+        
         score.reset()
         robot.die()
         loseMessage.setAttribute("style", "display: flex")

@@ -10,5 +10,7 @@ namespace OnlineWebGame.ViewModels
       public int FrameY { get; set; }
       public int Speed { get; set; }
       public bool Moving { get; set; }
+      public bool IsPlayingMiniGame { get; set; }
+
     }
 }

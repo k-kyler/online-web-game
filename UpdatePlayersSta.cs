@@ -13,9 +13,9 @@ namespace OnlineWebGame
         private readonly RequestDelegate _next;
 
         private GameOnlineContext _context;
-        public UpdatePlayersSta(RequestDelegate next)
+        public UpdatePlayersSta(GameOnlineContext context)
         {
-            _next = next;
+            _context = context;
            
         }
         private Timer aTimer;
@@ -40,18 +40,6 @@ namespace OnlineWebGame
         {
             timecount += 1;
             Debug.WriteLine(timecount);
-            //var userInfoDAO = new UserInfoDAO(_context);
-
-            //var players = userInfoDAO.getLowStaPlayers();
-            //Debug.WriteLine(players);
-            //Debug.WriteLine(1);
-        }
-
-        public async Task Invoke(HttpContext httpContext)
-        {
-            TimeCount();
-            await _next(httpContext);
-
         }
     }
 }

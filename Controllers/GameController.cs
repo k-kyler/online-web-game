@@ -92,7 +92,7 @@ namespace OnlineWebGame.Controllers
                 var user = userDAO.getByUsername(username);
                 var userInfo = userInfoDAO.getById(user.UserId);
                 
-                return Ok(new { code = "success", userId = user.UserId, infoId = userInfo.UserInfoId, level = userInfo.Level, stamina = userInfo.Stamina, coin = userInfo.Coin, exp = userInfo.Exp});
+                return Ok(new { code = "success", userId = user.UserId, infoId = userInfo.UserInfoId, level = userInfo.Level, stamina = userInfo.Stamina, coin = userInfo.Coin, exp = userInfo.Exp, bestScoreSnake = userInfo.BestScoreSnake, bestScoreFlappy = userInfo.BestScoreFlappy, bestScore2048 = userInfo.BestScore2048, bestScoreRobot = userInfo.BestScoreRobot });
             }
 
             return Redirect("/signin");
@@ -123,7 +123,30 @@ namespace OnlineWebGame.Controllers
             return BadRequest(new { code = "failed"});
         }
 
-        
+        [Route("userinfo/bestscore")]
+        [HttpPost]
+        public IActionResult SetBestScore([FromBody] BestScoreViewModel userInfo)
+        {
+            if (HttpContext.Session.GetString("username") != null)
+            {
+                var userInfoDAO = new UserInfoDAO(_context);
+
+                var infoId = Guid.Parse(userInfo.UserInfoId);
+
+                var newInfo = new UpdateBestScoreViewModel()
+                {
+                    BestScore = userInfo.BestScore,
+                    Game = userInfo.Game
+                };
+
+                userInfoDAO.updateBestScore(newInfo, infoId);
+
+                return Ok(new { code = "success" });
+            }
+            return BadRequest(new { code = "failed" });
+        }
+
+
         private void SendUserInfo()
         {
             var userDAO = new UserDAO(_context);
@@ -142,6 +165,10 @@ namespace OnlineWebGame.Controllers
             ViewBag.coin = userInfo.Coin;
             ViewBag.stamina = userInfo.Stamina;
             ViewBag.level = userInfo.Level;
+            ViewBag.BestScoreFlappy = userInfo.BestScoreFlappy;
+            ViewBag.BestScore2048 = userInfo.BestScore2048;
+            ViewBag.BestScoreRobot = userInfo.BestScoreRobot;
+            ViewBag.BestScoreSnake = userInfo.BestScoreSnake;
         }
     }
 }

@@ -140,7 +140,7 @@
 
     const robot = {
         element: document.querySelector("[data-robot]"),
-        jumpSpeed: 0.3,
+        jumpSpeed: 0.35,
         isJumping: false,
         gravity: 0.001,
         frame: 0,

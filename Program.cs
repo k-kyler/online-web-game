@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace OnlineWebGame
@@ -12,9 +13,10 @@ namespace OnlineWebGame
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => { 
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
                     // webBuilder.UseUrls("http://*:8000");
-                    webBuilder.UseStartup<Startup>(); 
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

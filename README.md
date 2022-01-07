@@ -16,6 +16,7 @@ Online 2D web game is a university project of I and my friends. We have used ASP
 
 ```
 Dotnet 5.0.402
+Dotnet EF 5.0.11
 PostgreSQL 12.9
 ```
 

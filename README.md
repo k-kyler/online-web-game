@@ -8,7 +8,7 @@ Online 2D web game is a university project of I and my friends. We have used ASP
 
 ## Project report
 
-[![Document](https://img.shields.io/badge/See%20Report-v1.0-blue?style=for-the-badge&logo=github)]()
+[![Document](https://img.shields.io/badge/See%20Report-v1.0-blue?style=for-the-badge&logo=github)](https://github.com/ToVinhKhang/All-Reports/blob/main/GAME/GAME_2D-Journey.pdf)
 
 ## Run project
 
@@ -40,7 +40,7 @@ https://localhost:5001
 ## Production link
 
 ```
-http://172.143.1.23
+http://13.115.36.7/
 ```
 
 ---

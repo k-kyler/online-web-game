@@ -37,7 +37,7 @@ dotnet run
 https://localhost:5001
 ```
 
-## Production link
+## Production (beta - unstable)
 
 ```
 http://13.115.36.7/

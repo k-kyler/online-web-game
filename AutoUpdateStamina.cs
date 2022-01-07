@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OnlineWebGame.DAO;
 using OnlineWebGame.Data;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,15 @@ using System.Threading.Tasks;
 
 namespace OnlineWebGame
 {
-    public class TimedHostedService : IHostedService, IDisposable
+    public class AutoUpdateStamina : IHostedService, IDisposable
     {
         private int executionCount = 0;
-        private readonly ILogger<TimedHostedService> _logger;
+        private readonly ILogger<AutoUpdateStamina> _logger;
         private Timer _timer = null!;
         private readonly IServiceScopeFactory _scopeFactory;
+        private GameOnlineContext _context;
 
-        public TimedHostedService(IServiceScopeFactory scopeFactory, ILogger<TimedHostedService> logger)
+        public AutoUpdateStamina(IServiceScopeFactory scopeFactory, ILogger<AutoUpdateStamina> logger)
         {
             _scopeFactory = scopeFactory;
             _logger = logger;
@@ -25,11 +27,9 @@ namespace OnlineWebGame
 
         public Task StartAsync(CancellationToken stoppingToken)
         {
-            using (var scope = _scopeFactory.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<GameOnlineContext>();
-                
-            }
+
+            _context = _scopeFactory.CreateScope().ServiceProvider.GetRequiredService<GameOnlineContext>();
+
             _logger.LogInformation("Timed Hosted Service running.");
 
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
@@ -44,6 +44,14 @@ namespace OnlineWebGame
 
             _logger.LogInformation(
                 "Timed Hosted Service is working. Count: {Count}", count);
+            var userInfoDAO = new UserInfoDAO(_context);
+            var user = userInfoDAO.getLowStaPlayers();
+            user.ForEach(u =>
+            {
+                u.Stamina += 1;
+                
+                userInfoDAO.updateUserSta(u);
+            });
         }
 
         public Task StopAsync(CancellationToken stoppingToken)

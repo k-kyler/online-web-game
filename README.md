@@ -38,12 +38,4 @@ dotnet run
 https://localhost:5001
 ```
 
-## Production (beta - unstable)
-
-```
-http://13.115.36.7/
-```
-
----
-
 Powered by KKL Software Team
